@@ -15,6 +15,7 @@ public class ClientService {
 
     private final ClientRepository clientRepository;
     private final ModelMapper modelMapper;
+
     @Autowired
     public ClientService(ClientRepository clientRepository, ModelMapper modelMapper) {
         this.clientRepository = clientRepository;
@@ -50,7 +51,7 @@ public class ClientService {
         return null;
     }
 
-    private boolean deleteByClientNumber(String clientNumber) {
+    public boolean deleteByClientNumber(String clientNumber) {
         Client existingClient = clientRepository.findByClientNumber(clientNumber);
 
         if (existingClient != null) {
