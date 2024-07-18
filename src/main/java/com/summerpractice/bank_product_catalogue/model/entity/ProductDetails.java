@@ -1,6 +1,7 @@
 package com.summerpractice.bank_product_catalogue.model.entity;
 
-
+import com.summerpractice.bank_product_catalogue.model.enums.Loan;
+import com.summerpractice.bank_product_catalogue.model.enums.Plan;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,23 +16,20 @@ public class ProductDetails {
     @GeneratedValue
     private Long id;
 
-    @Column(name = "product_type")
-    private String productType;
-    private String currency;
+    @JoinColumn(name="product_id")
+    @OneToOne(fetch = FetchType.EAGER)
+    private Product productId;
+
+    @Column(name = "plan_type")
+    private Plan planType;
+
+    @Column(name = "loan_type")
+    private Loan loanType;
+
+    @Column(name = "investment_type")
+    private double investmentType;
+
     private double price;
-    private double interest;
-    private double deposit;
-
-    @Column(name = "installment_value")
-    private double installmentValue;
-
-    @Column(name="minimum_credit_value")
-    private double minimumCreditValue;
-
-    @Column(name="maximum_credit_value")
-    private double maximumCreditValue;
-
-    @Column(name = "loan_term_in_months")
-    private int loanTermInMonths;
-
+    private String currency;
+    private double interest_rate;
 }
