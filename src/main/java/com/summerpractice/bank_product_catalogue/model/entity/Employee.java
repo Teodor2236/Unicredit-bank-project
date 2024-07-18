@@ -15,8 +15,7 @@ public class Employee {
     @GeneratedValue
     private Long id;
 
-    private String firstName;
-    private String lastName;
+    private String names;
 
     @Column(unique=true, nullable=false)
     private String email;
@@ -26,6 +25,7 @@ public class Employee {
 
     @Column(name="employee_number", unique = true, nullable=false)
     private String employeeNumber;
+
     @Column(nullable=false)
     private String password;
 
