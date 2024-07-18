@@ -30,4 +30,8 @@ public class ProductDetails {
 
     @Column(name="maximum_credit_value")
     private double maximumCreditValue;
+
+    @Column(name = "loan_term_in_months")
+    private int loanTermInMonths;
+
 }

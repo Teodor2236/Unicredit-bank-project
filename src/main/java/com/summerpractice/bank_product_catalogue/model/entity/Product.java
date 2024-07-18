@@ -16,7 +16,7 @@ public class Product {
     private Long id;
 
     @Column(name = "is_active")
-    private boolean isActive;
+    private boolean isActive = true;
     private String type;
     private String image_url;
     private String description;
