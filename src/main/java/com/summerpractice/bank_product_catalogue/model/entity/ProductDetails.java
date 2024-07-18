@@ -16,7 +16,7 @@ public class ProductDetails {
     @GeneratedValue
     private Long id;
 
-    @Column(name="product_id")
+    @JoinColumn(name="product_id")
     @OneToOne(fetch = FetchType.EAGER)
     private Product productId;
 
