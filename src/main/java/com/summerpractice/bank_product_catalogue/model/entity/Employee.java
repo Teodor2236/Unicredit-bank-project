@@ -17,11 +17,16 @@ public class Employee {
 
     private String firstName;
     private String lastName;
+
+    @Column(unique=true, nullable=false)
     private String email;
+
+    @Column(unique=true, nullable=false)
     private int EGN;
 
-    @Column(name="employee_number")
+    @Column(name="employee_number", unique = true, nullable=false)
     private String employeeNumber;
+    @Column(nullable=false)
     private String password;
 
     private Role role;

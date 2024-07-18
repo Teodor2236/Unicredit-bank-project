@@ -18,10 +18,13 @@ public class Client {
 
     private String firstName;
     private String lastName;
+
+    @Column(unique=true, nullable=false)
     private String email;
+    @Column(unique=true)
     private int EGN;
 
-    @Column(name="client_number")
+    @Column(name="client_number", unique=true, nullable=false)
     private String clientNumber;
 
     @ManyToMany
