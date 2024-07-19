@@ -7,11 +7,10 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name="client_requests")
+@Table(name = "client_requests")
 public class ClientRequest {
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -22,7 +21,7 @@ public class ClientRequest {
     @JoinColumn(name = "product_details_id", nullable = false)
     private ProductDetails productDetails;
 
-    @Column(name="loan_amount")
+    @Column(name = "loan_amount")
     private double loanAmount;
 
     @Column(name = "loan_term_in_months")

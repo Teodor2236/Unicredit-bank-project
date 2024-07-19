@@ -1,5 +1,6 @@
 package com.summerpractice.bank_product_catalogue.model.entity;
 
+import com.summerpractice.bank_product_catalogue.model.enums.Investment;
 import com.summerpractice.bank_product_catalogue.model.enums.Loan;
 import com.summerpractice.bank_product_catalogue.model.enums.Plan;
 import jakarta.persistence.*;
@@ -9,14 +10,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name="product_details")
+@Table(name = "product_details")
 public class ProductDetails {
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JoinColumn(name="product_id")
+    @JoinColumn(name = "product_id")
     @OneToOne(fetch = FetchType.EAGER)
     private Product productId;
 
@@ -27,7 +27,7 @@ public class ProductDetails {
     private Loan loanType;
 
     @Column(name = "investment_type")
-    private double investmentType;
+    private Investment investmentType;
 
     private double price;
     private String currency;

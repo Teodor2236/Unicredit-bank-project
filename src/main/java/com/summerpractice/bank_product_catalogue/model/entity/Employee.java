@@ -8,25 +8,24 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name="employees")
+@Table(name = "employees")
 public class Employee {
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String names;
 
-    @Column(unique=true, nullable=false)
+    @Column(unique = true, nullable = false)
     private String email;
 
-    @Column(unique=true, nullable=false)
+    @Column(unique = true, nullable = false)
     private int EGN;
 
-    @Column(name="employee_number", unique = true, nullable=false)
+    @Column(name = "employee_number", unique = true, nullable = false)
     private String employeeNumber;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private String password;
 
     private Role role;

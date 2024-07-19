@@ -75,6 +75,7 @@ nav a{
     margin-left: 1.5rem;
     color: white;
     font-size: 20px;
+    text-decoration:none;
 }
 
 a {
@@ -82,11 +83,13 @@ a {
     color: #960707;
     padding: 0 .25rem;
     margin: 0 -.25rem;
+    text-decoration:none;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 a:hover {
-    color: var(--blackcolor);
+    color: var(--backcolor);
+    text-decoration: none;
     box-shadow: inset 300px 0 0 0 #e16477;
 }
 
@@ -110,7 +113,11 @@ a:hover {
     box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
     margin: 0;
     padding: 1rem;
+<<<<<<< HEAD
     width: 100%;
+=======
+    width:100%;
+>>>>>>> 0da49fbb021462c8904e5e656aac36819db3dbc9
 }
 
 .main-inner-footer{
