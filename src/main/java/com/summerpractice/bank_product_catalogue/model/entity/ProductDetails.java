@@ -1,5 +1,6 @@
 package com.summerpractice.bank_product_catalogue.model.entity;
 
+import com.summerpractice.bank_product_catalogue.model.enums.Investment;
 import com.summerpractice.bank_product_catalogue.model.enums.Loan;
 import com.summerpractice.bank_product_catalogue.model.enums.Plan;
 import jakarta.persistence.*;
@@ -27,7 +28,7 @@ public class ProductDetails {
     private Loan loanType;
 
     @Column(name = "investment_type")
-    private double investmentType;
+    private Investment investmentType;
 
     private double price;
     private String currency;
