@@ -81,13 +81,13 @@ a {
     box-shadow: inset 0 0 0 0;
     color: #960707;
     padding: 0 .25rem;
-    margin: 0 -.25rem;
+    margin: 0 -.25rem;text-decoration: none;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
 }
 
 a:hover {
     color: var(--backcolor);
-    box-shadow: inset auto 0 0 0 #e16477;
+    box-shadow: inset 300px 0 0 0 #e16477;
 }
 
 #navbar{
@@ -110,6 +110,7 @@ a:hover {
     box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
     margin: 0;
     padding: 1rem;
+    width: 100%
 }
 
 .main-inner-footer{
@@ -275,9 +276,9 @@ main > h1 {
 }
 
 .content a {
-	color: #000;
+	color: #fff;
 	font-weight: 300;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 main :last-child,
@@ -294,6 +295,7 @@ main :last-child,
 	display: flex;
 	flex-direction: row;
 	place-items: center;
+	text-decoration: none;
 }
 
 .title a::before {
@@ -313,6 +315,7 @@ main :last-child,
 	-webkit-mask-image: var(--chevron-icon);
 	-webkit-mask-size: 100% 100%;
 	background-color: currentColor;
+	text-decoration: none;
 }
 
 .accordion::before,
@@ -365,10 +368,45 @@ main :last-child,
 .title a:focus-visible {
 	background-color: hsl(0, 100%, 90%);
 	outline: none;
+	text-decoration: none;
 }
 
 .accordion:target .title a:focus-visible {
 	background-color: hsl(183, 100%, 93%);
+}
+#request_btn>a, #request_button>a{
+    text-decoration: none;
+    color:#fff;
+}
+#override_bootstrap.nav a{
+
+    box-shadow: inset 0 0 0 0;
+    color: white;
+    padding: 0 .25rem;
+    margin: 0 -.25rem;
+    text-decoration:none;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+#override_bootstrap.menu a{
+text-decoration:none;
+}
+#override_bootstrap.nav a:hover {
+    color: white;
+    box-shadow: inset 300px 0 0 0 #e16477;
+}
+#override_bootstrap_footer a{
+
+    box-shadow: inset 0 0 0 0;
+    color: #960707;
+    padding: 0 .25rem;
+    margin: 0 -.25rem;
+    text-decoration:none;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+#override_bootstrap_footer a:hover {
+    color: var(--backcolor);
+    box-shadow: inset 300px 0 0 0 #e16477;
+
 }
 /*-------------------------------------Responsive-Part--------------------------------------------*/
 @media (min-width: 40rem) {
