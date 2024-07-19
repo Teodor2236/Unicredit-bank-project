@@ -48,6 +48,16 @@ public class ClientController implements Controller<ClientDTO> {
         return ResponseEntity.ok(client);
     }
 
+    @GetMapping("/get/{EGN}")
+    public ResponseEntity<ClientDTO> getByEGN(@PathVariable String EGN) {
+        ClientDTO client = clientService.getByEGN(EGN);
+
+        if (client == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(client);
+    }
+
     @PutMapping("/put/{clientNumber}")
     public ResponseEntity<ClientDTO> updateByClientNumber(@RequestBody ClientDTO clientDTO, @PathVariable String clientNumber) {
         ClientDTO updatedClient = clientService.updateByClientNumber(clientNumber, clientDTO);

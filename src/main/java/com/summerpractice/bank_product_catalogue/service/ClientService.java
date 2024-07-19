@@ -40,6 +40,11 @@ public class ClientService {
         return modelMapper.map(client, ClientDTO.class);
     }
 
+    public ClientDTO getByEGN(String EGN){
+        Client client = clientRepository.findByEGN(EGN);
+        return modelMapper.map(client, ClientDTO.class);
+    }
+
     public ClientDTO updateByClientNumber(String clientNumber, ClientDTO clientDTO) {
         Client existingClient = clientRepository.findByClientNumber(clientNumber);
 
