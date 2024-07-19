@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/clients")
-public class ClientController {
+@RequestMapping("/clients/v1.0.0")
+public class ClientController implements Controller<ClientDTO> {
 
     private final ClientService clientService;
 
@@ -19,14 +19,16 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
+    @Override
     public ResponseEntity<ClientDTO> create(@RequestBody ClientDTO clientDTO) {
 
         ClientDTO createdClient = clientService.create(clientDTO);
         return ResponseEntity.ok(createdClient);
     }
 
-    @GetMapping
+    @GetMapping("/get")
+    @Override
     public ResponseEntity<List<ClientDTO>> getAll() {
         List<ClientDTO> clients = clientService.getAll();
 
@@ -36,7 +38,7 @@ public class ClientController {
         return ResponseEntity.ok(clients);
     }
 
-    @GetMapping("/{clientNumber}")
+    @GetMapping("/get/{clientNumber}")
     public ResponseEntity<ClientDTO> getByClientNumber(@PathVariable String clientNumber) {
         ClientDTO client = clientService.getByClientNumber(clientNumber);
 
@@ -46,7 +48,7 @@ public class ClientController {
         return ResponseEntity.ok(client);
     }
 
-    @PutMapping("/{clientNumber}")
+    @PutMapping("/put/{clientNumber}")
     public ResponseEntity<ClientDTO> updateByClientNumber(@RequestBody ClientDTO clientDTO, @PathVariable String clientNumber) {
         ClientDTO updatedClient = clientService.updateByClientNumber(clientNumber, clientDTO);
         if (updatedClient == null) {
@@ -55,9 +57,9 @@ public class ClientController {
         return ResponseEntity.ok(updatedClient);
     }
 
-    @DeleteMapping("/{clientNumber}")
+    @DeleteMapping("/delete/{clientNumber}")
     public ResponseEntity<ClientDTO> deleteByClientNumber(@PathVariable String clientNumber) {
-        if(clientService.deleteByClientNumber(clientNumber)) {
+        if (clientService.deleteByClientNumber(clientNumber)) {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();
