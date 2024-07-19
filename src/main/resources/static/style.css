@@ -113,7 +113,11 @@ a:hover {
     box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
     margin: 0;
     padding: 1rem;
+<<<<<<< HEAD
+    width: 100%;
+=======
     width:100%;
+>>>>>>> 0da49fbb021462c8904e5e656aac36819db3dbc9
 }
 
 .main-inner-footer{
