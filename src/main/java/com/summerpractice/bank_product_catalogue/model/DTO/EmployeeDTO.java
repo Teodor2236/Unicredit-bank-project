@@ -9,10 +9,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmployeeDTO {
-    private String firstName;
-    private String lastName;
+    private String names;
     private String email;
-    private int EGN;
+    private String EGN;
     private String employeeNumber;
     private String password;
     private Role role;

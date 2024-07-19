@@ -20,7 +20,7 @@ public class Employee {
     private String email;
 
     @Column(unique = true, nullable = false)
-    private int EGN;
+    private String EGN;
 
     @Column(name = "employee_number", unique = true, nullable = false)
     private String employeeNumber;

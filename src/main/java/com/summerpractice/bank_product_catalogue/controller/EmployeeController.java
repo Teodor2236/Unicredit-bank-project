@@ -36,7 +36,7 @@ public class EmployeeController implements Controller<EmployeeDTO> {
         return ResponseEntity.ok(employees);
     }
 
-    @GetMapping("/get/{employeeNumber}")
+    @GetMapping("/get/employee-number/{employeeNumber}")
     public ResponseEntity<EmployeeDTO> getByEmployeeNumber(@PathVariable String employeeNumber) {
         EmployeeDTO employee = employeeService.getByEmployeeNumber(employeeNumber);
         if (employee == null) {
@@ -45,7 +45,7 @@ public class EmployeeController implements Controller<EmployeeDTO> {
         return ResponseEntity.ok(employee);
     }
 
-    @GetMapping("/get/{EGN}")
+    @GetMapping("/get/EGN/{EGN}")
     public ResponseEntity<EmployeeDTO> getByEGN(@PathVariable String EGN) {
         EmployeeDTO employee = employeeService.getByEGN(EGN);
         if (employee == null){
@@ -54,7 +54,7 @@ public class EmployeeController implements Controller<EmployeeDTO> {
         return  ResponseEntity.ok(employee);
     }
 
-    @PutMapping("/put/{employeeNumber}")
+    @PutMapping("/put/employee-number/{employeeNumber}")
     public ResponseEntity<EmployeeDTO> updateByEmployeeNumber(@RequestBody EmployeeDTO employeeDTO, @PathVariable String employeeNumber) {
         EmployeeDTO updatedEmployee = employeeService.updateByEmployeeNumber(employeeNumber, employeeDTO);
         if (updatedEmployee == null) {
