@@ -12,7 +12,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDetailsDTO {
-
     private Product productId;
     private Plan planType;
     private Loan loanType;

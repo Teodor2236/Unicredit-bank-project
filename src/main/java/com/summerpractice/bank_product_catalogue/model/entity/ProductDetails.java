@@ -10,14 +10,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name="product_details")
+@Table(name = "product_details")
 public class ProductDetails {
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JoinColumn(name="product_id")
+    @JoinColumn(name = "product_id")
     @OneToOne(fetch = FetchType.EAGER)
     private Product productId;
 
