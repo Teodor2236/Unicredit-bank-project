@@ -8,7 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClientRequestDTO {
-
     private ClientDTO client;
     private ProductDetailsDTO productDetails;
     private double loanAmount;

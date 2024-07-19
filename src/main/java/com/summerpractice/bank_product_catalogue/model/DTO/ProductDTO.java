@@ -11,7 +11,6 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDTO {
-
     private Long id;
     private boolean isActive;
     private String type;

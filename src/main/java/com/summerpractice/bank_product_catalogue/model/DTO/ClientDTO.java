@@ -1,13 +1,16 @@
 package com.summerpractice.bank_product_catalogue.model.DTO;
-import jakarta.persistence.Column;
+
 import lombok.*;
 
 import java.util.Set;
 
-@Getter @Setter @ToString
-@AllArgsConstructor @NoArgsConstructor
+@Getter
+@Setter
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClientDTO {
-
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;
