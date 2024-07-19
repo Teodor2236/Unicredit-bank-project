@@ -2,8 +2,6 @@ package com.summerpractice.bank_product_catalogue.model.DTO;
 
 import lombok.*;
 
-import java.util.Set;
-
 @Getter
 @Setter
 @ToString
@@ -11,10 +9,9 @@ import java.util.Set;
 @NoArgsConstructor
 public class ClientDTO {
     private Long id;
-    private String firstName;
-    private String lastName;
+    private String names;
     private String email;
-    private int EGN;
+    private String EGN;
     private String clientNumber;
-    private Set<ProductDTO> products;
+    private String phone;
 }

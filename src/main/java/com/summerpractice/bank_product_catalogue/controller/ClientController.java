@@ -38,7 +38,7 @@ public class ClientController implements Controller<ClientDTO> {
         return ResponseEntity.ok(clients);
     }
 
-    @GetMapping("/get/{clientNumber}")
+    @GetMapping("/get/client-number/{clientNumber}")
     public ResponseEntity<ClientDTO> getByClientNumber(@PathVariable String clientNumber) {
         ClientDTO client = clientService.getByClientNumber(clientNumber);
 
@@ -48,7 +48,7 @@ public class ClientController implements Controller<ClientDTO> {
         return ResponseEntity.ok(client);
     }
 
-    @GetMapping("/get/{EGN}")
+    @GetMapping("/get/EGN/{EGN}")
     public ResponseEntity<ClientDTO> getByEGN(@PathVariable String EGN) {
         ClientDTO client = clientService.getByEGN(EGN);
 
@@ -58,7 +58,7 @@ public class ClientController implements Controller<ClientDTO> {
         return ResponseEntity.ok(client);
     }
 
-    @PutMapping("/put/{clientNumber}")
+    @PutMapping("/put/client-number/{clientNumber}")
     public ResponseEntity<ClientDTO> updateByClientNumber(@RequestBody ClientDTO clientDTO, @PathVariable String clientNumber) {
         ClientDTO updatedClient = clientService.updateByClientNumber(clientNumber, clientDTO);
         if (updatedClient == null) {
