@@ -7,22 +7,21 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name="clients")
+@Table(name = "clients")
 public class Client {
-
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String names;
 
-    @Column(unique=true)
-    private int EGN;
+    @Column(unique = true)
+    private String EGN;
 
-    @Column(name="client_number", unique=true, nullable=false)
+    @Column(name = "client_number", unique = true, nullable = false)
     private String clientNumber;
 
-    @Column(unique=true, nullable=false)
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Column(unique = true)
