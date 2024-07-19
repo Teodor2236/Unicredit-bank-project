@@ -10,7 +10,10 @@
   background-image: linear-gradient(to right, azure, rgb(228, 97, 95));
   background-repeat: no-repeat;
 }
-
+#goHome a:hover{
+transition:none;
+box-shadow:none;
+}
 .krediti{
     text-align: center;
   }

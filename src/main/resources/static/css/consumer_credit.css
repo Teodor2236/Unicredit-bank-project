@@ -88,7 +88,10 @@
     -o-transform: skewX(-20deg);
     transform: skewX(-20deg);
   }
-  
+  #goHome a:hover{
+  transition:none;
+  box-shadow:none;
+  }
   @keyframes sh02 {
     from {
       opacity: 0;
