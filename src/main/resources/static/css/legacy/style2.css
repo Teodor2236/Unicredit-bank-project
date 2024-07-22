@@ -34,7 +34,7 @@
 } */
 
 
-@media only screen and (min-width: 811px){
+ @media only screen and (min-width: 811px){
   .main{
     display: flex;
     flex-direction: column;
