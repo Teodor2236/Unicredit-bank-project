@@ -18,5 +18,5 @@ public class ProductDetailsDTO {
     private Investment investmentType;
     private double price;
     private String currency;
-    private double interest_rate;
+    private double interestRate;
 }

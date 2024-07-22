@@ -14,9 +14,7 @@ public class ProductDTO {
     private Long id;
     private boolean isActive;
     private String type;
-    private String image_url;
+    private String imageUrl;
     private String description;
-    private ProductDetails productDetails;
-    private Set<ClientDTO> clients;
 
 }
