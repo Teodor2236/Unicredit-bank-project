@@ -20,12 +20,16 @@ public class ProductDetails {
     @OneToOne(fetch = FetchType.EAGER)
     private Product productId;
 
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "plan_type")
     private Plan planType;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "loan_type")
     private Loan loanType;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "investment_type")
     private Investment investmentType;
 
