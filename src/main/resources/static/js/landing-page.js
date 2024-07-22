@@ -1,4 +1,4 @@
-import {get} from "./requester";
+import {get} from "../js/requester.js";
 
 async function loadClient() {
     try {
@@ -14,4 +14,4 @@ async function loadClient() {
     }
 }
 
-loadClient();
+await loadClient();
