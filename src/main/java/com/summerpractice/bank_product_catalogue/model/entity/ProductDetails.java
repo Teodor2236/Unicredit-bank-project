@@ -35,5 +35,5 @@ public class ProductDetails {
 
     private double price;
     private String currency;
-    private double interest_rate;
+    private double interestRate;
 }
