@@ -408,6 +408,10 @@ text-decoration:none;
     box-shadow: inset 300px 0 0 0 #e16477;
 
 }
+#goHome a:hover{
+    transition:none;
+    box-shadow:none;
+}
 /*-------------------------------------Responsive-Part--------------------------------------------*/
 @media (min-width: 40rem) {
     .cards_item {

@@ -157,7 +157,10 @@ a:hover {
     width: 2%;
     margin-left: 50px;
 }
-
+#goHome a:hover{
+transition:none;
+box-shadow:none;
+}
 /*---------------------------------------accordion-------------------------------*/
 .main-body{
     margin: 10%;
