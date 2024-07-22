@@ -409,8 +409,8 @@ text-decoration:none;
 
 }
 #goHome a:hover{
-transition:none;
-box-shadow:none;
+    transition:none;
+    box-shadow:none;
 }
 /*-------------------------------------Responsive-Part--------------------------------------------*/
 @media (min-width: 40rem) {
