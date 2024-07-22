@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/consumer-credit-calc.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Потребителски кредит - калкулатор</title>
+</head>
+<body>
+
+<header>
+    <div class="logo"><a id="goHome" href="landing-page.html" ><img src="../image/logo.png" alt=""></a>
+        <h1>Bank menu</h1>
+    </div>
+
+    <nav class="menu">
+        <a href="card-plans.html">Карти</a>
+        <a href=consumer-credit.html>Потребителски кредит</a>
+        <a href="mortgage.html">Ипотечен кредит</a>
+        <a href="#">Инвестиционни фондове</a>
+        <a href="leasing-page.html">Лизинг</a>
+        <a href="./deposits.html">Депозити</a>
+    </nav>
+
+    <div class="navbar-icons">
+        <div id="navbar" class="fas fa-bars"></div>
+    </div>
+
+</header>
+
+<main>
+    <div class="sum">
+        <label>Изберете сума</label>
+        <input class="info" id="s-sum">
+        <div class="slidecontainer">
+            <input type="range" min="10000" max="1000000" value="10000" class="slider" id="myRange">
+        </div>
+    </div>
+    <div class="period">
+        <label>Изберете период</label>
+        <input class="info" id="p-period">
+        <div class="slidecontainer">
+            <input type="range" min="12" max="420" value="12" class="slider" id="myRange2">
+        </div>
+    </div>
+    <div class="installment">
+        <label>Изберете месечна вноска</label>
+        <input class="info" id="m-installment">
+        <div class="slidecontainer">
+            <input type="range"  value="50" class="slider" id="myRange3">
+        </div>
+    </div>
+    <div class="buttons">
+        <button class="vhod"><a href="../internal/empoyeeLogin.html">Заяви</a></button>
+    </div>
+
+
+</main>
+
+<footer class="main-footer">
+    <div class="main-inner-footer">
+        <div class="footer-content">
+            <a href="card-plans.html">Карти</a>
+            <a href=consumer-credit.html>Потребителски кредит</a>
+            <a href="mortgage.html">Ипотечен кредит</a>
+            <a href="#">Инвестиционни фондове</a>
+            <a href="leasing-page.html">Лизинг</a>
+            <a href="./deposits.html">Депозити</a>
+        </div>
+
+    </div>
+
+    <div class="footer-second-part">
+        <p>2024 © UnicreditBulbank</p>
+        <img src="../image/logo.png" alt="">
+    </div>
+</footer>
+
+<script src="../js/consumer-credit-calc.js"></script>
+</body>
+</html>
