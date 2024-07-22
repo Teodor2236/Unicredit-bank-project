@@ -53,7 +53,10 @@ header{
 }
 
 /*------------------------Navigation-Bar--------------------------*/
-
+#goHome a:hover{
+transition:none;
+box-shadow:none;
+}
 header .logo {
     display: flex;
     align-items: center; 
