@@ -8,13 +8,3 @@ landingButton.addEventListener('click', function() {
     console.log(clientNumber)
     localStorage.setItem('clientNumber', clientNumber);
 });
-
-// function consoleLogClientNUm() {
-//
-// }
-//
-// document.addEventListener("DOMContentLoaded", () => {
-//     consoleLogClientNUm();
-// });
-
-

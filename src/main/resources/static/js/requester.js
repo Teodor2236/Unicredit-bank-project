@@ -1,5 +1,5 @@
 
-const host = "http://localhost:8080";
+const host = "http://localhost:8080/";
 
 async function requester(method, url, data) {
     const options = {
