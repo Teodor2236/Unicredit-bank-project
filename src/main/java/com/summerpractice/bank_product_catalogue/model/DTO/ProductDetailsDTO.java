@@ -1,9 +1,9 @@
 package com.summerpractice.bank_product_catalogue.model.DTO;
 
+import com.summerpractice.bank_product_catalogue.model.entity.Investment;
+import com.summerpractice.bank_product_catalogue.model.entity.Loan;
+import com.summerpractice.bank_product_catalogue.model.entity.Plan;
 import com.summerpractice.bank_product_catalogue.model.entity.Product;
-import com.summerpractice.bank_product_catalogue.model.enums.Investment;
-import com.summerpractice.bank_product_catalogue.model.enums.Loan;
-import com.summerpractice.bank_product_catalogue.model.enums.Plan;
 import lombok.*;
 
 @Getter
