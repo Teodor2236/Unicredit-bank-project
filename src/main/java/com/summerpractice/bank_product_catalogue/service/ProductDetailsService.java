@@ -36,6 +36,7 @@ public class ProductDetailsService {
                 .collect(Collectors.toList());
     }
 
+
     public ProductDetailsDTO getById(Long id) {
         Optional<ProductDetails> productDetails = productDetailsRepository.findById(id);
         return productDetails.map(pd -> modelMapper.map(pd, ProductDetailsDTO.class)).orElse(null);

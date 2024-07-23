@@ -217,6 +217,9 @@ body {
 	scroll-padding-top: 1rem;
 }
 
+.menu a{
+  font-size:25px;
+  }
 main > h1 {
 	font-size: var(--size-header);
 	margin-bottom: 1.25rem;
@@ -444,7 +447,6 @@ main :last-child,
       background: var(--main-color);
       width: 100%;
       left: 0;
-      height: 100vh;
       clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
   
     }

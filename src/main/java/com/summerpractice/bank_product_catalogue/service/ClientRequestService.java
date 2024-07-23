@@ -35,7 +35,6 @@ public class ClientRequestService {
                 .map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
                 .collect(Collectors.toList());
     }
-
     public ClientRequestDTO getById(Long id) {
         Optional<ClientRequest> clientRequest = clientRequestRepository.findById(id);
         return clientRequest.map(cr -> modelMapper.map(cr, ClientRequestDTO.class)).orElse(null);

@@ -17,6 +17,9 @@ async function requester(method, url, data) {
 
         let result;
 
+        if(response.status === 404){
+            return null;
+        }
         if (response.status !== 204) {
             result = await response.json();
         }
