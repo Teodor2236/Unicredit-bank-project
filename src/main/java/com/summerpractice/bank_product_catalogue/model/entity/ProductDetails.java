@@ -13,23 +13,23 @@ public class ProductDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JoinColumn(name = "product_id")
-    @OneToOne(fetch = FetchType.EAGER)
-    private Product productId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_id", referencedColumnName = "id", unique = false)
+    private Product product;
 
     private double price;
     private String currency;
     private double interestRate;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "plan_type", referencedColumnName = "id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "plan_type", referencedColumnName = "id", nullable = true)
     private Plan planType;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "loan_type", referencedColumnName = "id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "loan_type", referencedColumnName = "id", nullable = true)
     private Loan loanType;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "investment_type", referencedColumnName = "id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "investment_type", referencedColumnName = "id", nullable = true)
     private Investment investmentType;
 }
