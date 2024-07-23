@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products/v1.0.0")
+@CrossOrigin(origins = "http://127.0.0.1:5501")
 public class ProductController implements Controller<ProductDTO> {
     private final ProductService productService;
 

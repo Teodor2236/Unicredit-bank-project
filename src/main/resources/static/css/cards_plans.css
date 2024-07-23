@@ -107,10 +107,10 @@ a:hover {
 /* -------------------Footer---------------- */
 .main-footer{
     background: #ececec;
-    box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: 0;
     padding: 1rem;
-    width: 100%
+    width:100%;
 }
 
 .main-inner-footer{
@@ -119,21 +119,6 @@ a:hover {
     flex-wrap: wrap;
 }
 
-.footer-content{
-    margin: 0 auto;
-    padding: 1rem;
-    text-align: center;
-}
-
-.footer-content img{
-    width: 100px;
-}
-
-.footer-content a{
-    display: block;
-    font-size: 1.5rem;
-    padding: 1rem;
-}
 
 .logo-text{
     font-size: 2.5rem;
@@ -143,7 +128,6 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid gray;
     padding: 20px;
     font-size: 20px;
 }
@@ -153,9 +137,38 @@ a:hover {
     margin-left: 50px;
 }
 
+
+.fa {
+    text-align: center;
+    text-decoration: none;
+    color: rgb(72, 69, 69);
+    margin-right: 25px;
+    font-size: 24px !important; 
+  
+}
+
+.sources{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .sources a {
+    color: rgb(99, 89, 89);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 32px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .sources a:hover {
+    color: gray;
+  } 
+
 /*---------------------------------------accordion-------------------------------*/
 .main-body{
     margin: 10%;
+    margin-top: 20%;
     border-style: outline;
     padding: 20px;
     border-radius:10px;
@@ -223,7 +236,7 @@ main > h1 {
 	--circle-x: 1.8rem;
 	--circle-y: 0;
 	--circle-r: 500%;
-	--circle-bg: rgba(253, 0, 0, 0.8);
+	--circle-bg: rgba(173, 162, 162, 0.8);
 	color: #fff;
 
 	background-color: var(--circle-bg);
@@ -412,13 +425,14 @@ text-decoration:none;
     transition:none;
     box-shadow:none;
 }
+
 /*-------------------------------------Responsive-Part--------------------------------------------*/
 @media (min-width: 40rem) {
     .cards_item {
         width: 50%;
     }
   }
-
+  
 @media (min-width: 56rem) {
     .cards_item {
         width: 33.3333%;
@@ -426,17 +440,25 @@ text-decoration:none;
   }
 
 @media (max-width:811px) {
+    header{
+        background-image: linear-gradient(130deg, white 40%, var(--main-color) -50%);
+    }
+
+    .card_text {
+        font-size: 18px;
+    }
+
     html{
       font-size: 50%;
     }
     #navbar{
       display: initial;
     }
-
+  
     #menu-bars{
-      display: initial;
+      display: initial;  
     }
-
+  
     .navbar{
       position: absolute;
       top: -100%;
@@ -456,24 +478,23 @@ text-decoration:none;
       width: 100%;
       text-align: center;
     }
-
+  
     nav{
       position: absolute;
       top: 100%;
       background: var(--main-color);
       width: 100%;
       left: 0;
-      height: 100vh;
+      height: 55vh;
       clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
-
+  
     }
     nav.active{
       clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
-
+  
     }
     nav a{
       display: block;
-      background-color: var(--graycolortxt);
       margin: 1rem;
       padding: 2rem 2rem;
       border: 3px solid white;
@@ -482,9 +503,23 @@ text-decoration:none;
     .navbar-icons{
       display: flex;
       align-items: center;
-
+     
     }
     .navbar-icons div{
       margin: 1rem;
     }
+
+    .footer-second-part img{
+        width: 15%;
+        margin-left: 50px;
+    }
+
+    .card_title {
+        font-size: 2.1rem;
+    }
+
+    .logo h1{
+        font-size: 24px;
+    }
+    
 }

@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/clients/v1.0.0")
+@CrossOrigin(origins = "http://127.0.0.1:5501")
 public class ClientController implements Controller<ClientDTO> {
 
     private final ClientService clientService;

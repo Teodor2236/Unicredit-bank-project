@@ -27,7 +27,6 @@ box-shadow:none;
     align-items: center;
     text-align: center;
     gap:25px;
-    margin-top: 200px;
   }
   .main3 p {
     margin-left: 3%;
@@ -39,6 +38,7 @@ box-shadow:none;
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
   #calcing{
     background: white;
@@ -200,18 +200,18 @@ box-shadow:none;
   
   
   
-  @media (max-width:811px) {
+  /* @media (max-width:811px) {
     /* html{
       font-size: 50%;
     } */
-    #navbar{
+    /* #navbar{
       display: initial;
     }
   
     #menu-bars{
       display: initial;  
-    }
-  
+    } */
+   */
     /* .navbar{
       position: absolute;
       top: -100%;
@@ -232,13 +232,13 @@ box-shadow:none;
       text-align: center;
     } */
   
-    nav{
+    /* nav{
       position: absolute;
       top: 100%;
       background: var(--main-color);
       width: 100%;
       left: 0;
-      /* height: 100vh; */
+      height: 100vh;
       clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
   
     }
@@ -264,56 +264,163 @@ box-shadow:none;
       margin: 1rem;
     }
     
-  }
+  } */
 
 
 
-
-/* --------------------Footer---------------- */
+/* -------------------Footer---------------- */
 .main-footer{
-    background: #ececec;
-    box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
-    margin: 0;
-    padding: 1rem;
-    margin-top: 30px;
+  background: #ececec;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 0;
+  padding: 1rem;
+  width:100%;
+}
+
+.main-inner-footer{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.logo-text{
+  font-size: 2.5rem;
+}
+
+.footer-second-part{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.footer-second-part img{
+  width: 2%;
+  margin-left: 50px;
+}
+
+
+.fa {
+  text-align: center;
+  text-decoration: none;
+  color: rgb(72, 69, 69);
+  margin-right: 25px;
+  font-size: 24px !important; 
+
+}
+
+.sources{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sources a {
+  color: rgb(99, 89, 89);
+  text-decoration: none;
+  margin-right: 20px;
+  font-size: 32px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.sources a:hover {
+  color: gray;
+}
+
+@media (max-width:811px) {
+  header{
+      background-image: linear-gradient(130deg, white 40%, var(--main-color) -50%);
   }
-  
-  .main-inner-footer{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+
+  .card_text {
+      font-size: 18px;
   }
-  
-  .footer-content{
-    margin: 0 auto;
-    padding: 1rem;
-    text-align: center;
+
+  html{
+    font-size: 50%;
   }
-  
-  .footer-content img{
-    width: 100px;
+  #navbar{
+    display: initial;
   }
-  
-  .footer-content a{
+
+  #menu-bars{
+    display: initial;  
+  }
+
+  .navbar{
+    position: absolute;
+    top: -100%;
+    right: 0;
+    left: 0;
+  }
+  .navbar a{
     display: block;
     font-size: 1.5rem;
+    margin: 1rem;
     padding: 1rem;
   }
-  
-  .logo-text{
-    font-size: 2.5rem;
+  .header{
+    padding: 2rem;
   }
-  
-  .footer-second-part{
+  .background-text h2{
+    width: 100%;
+    text-align: center;
+  }
+
+  nav{
+    position: absolute;
+    top: 100%;
+    background: var(--main-color);
+    width: 100%;
+    left: 0;
+    height: 50vh;
+    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+
+  }
+  nav.active{
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+
+  }
+  nav a{
+    display: block;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    border: 3px solid white;
+    font-size: 1.5rem;
+  }
+  .navbar-icons{
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-top: 2px solid gray;
-    padding: 20px;
-    font-size: 20px;
+   
   }
-  
+  .navbar-icons div{
+    margin: 1rem;
+  }
+
   .footer-second-part img{
-    width: 2%;
-    margin-left: 50px;
+      width: 15%;
+      margin-left: 50px;
   }
+
+  .card_title {
+      font-size: 2.1rem;
+  }
+
+  .logo h1{
+    font-size: 24px;
+}
+
+.main3 p{
+  font-size: 20px;
+}
+
+
+.krediti{
+  font-size: 30px;
+}
+
+
+  
+}
