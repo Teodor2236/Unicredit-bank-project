@@ -38,6 +38,7 @@ box-shadow:none;
     justify-content: space-around;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 #calcing{
     background: white;
@@ -239,19 +240,23 @@ a:hover {
     width: 100%;
 }
 
+.main5 p {
+  font-size: 18px;
+}
+
   
   
   @media (max-width:811px) {
     /* html{
       font-size: 50%;
     } */
-    #navbar{
+    /* #navbar{
       display: initial;
-    }
+    } */
 
-    #menu-bars{
+    /* #menu-bars{
       display: initial;
-    }
+    } */
 
     /* .navbar{
       position: absolute;
@@ -273,16 +278,16 @@ a:hover {
       text-align: center;
     } */
 
-    nav{
+    /* nav{
       position: absolute;
       top: 100%;
       background: var(--main-color);
       width: 100%;
-      left: 0;
+      left: 0; */
       /* height: 100vh; */
-      clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+      /* clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0); */
 
-    }
+    /* }
     nav.active{
       clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 
@@ -303,17 +308,17 @@ a:hover {
     }
     .navbar-icons div{
       margin: 1rem;
-    }
+    } */
+
 
   }
 
 
-/* ------------Footer------------ */
-
+/* -------------------Footer---------------- */
 .main-footer{
   background: #ececec;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  margin-top: 20%;
+  margin: 0;
   padding: 1rem;
   width:100%;
 }
@@ -338,7 +343,7 @@ a:hover {
 }
 
 .footer-second-part img{
-  width: 15%;
+  width: 2%;
   margin-left: 50px;
 }
 
@@ -348,7 +353,7 @@ a:hover {
   text-decoration: none;
   color: rgb(72, 69, 69);
   margin-right: 25px;
-  font-size: 24px !important;
+  font-size: 24px !important; 
 
 }
 
@@ -368,4 +373,100 @@ a:hover {
 
 .sources a:hover {
   color: gray;
+} 
+
+.krediti{
+  font-size: 24px;
+}
+
+@media (max-width:811px) {
+  header{
+      background-image: linear-gradient(130deg, white 40%, var(--main-color) -50%);
+  }
+
+  .card_text {
+      font-size: 18px;
+  }
+
+  html{
+    font-size: 50%;
+  }
+  #navbar{
+    display: initial;
+  }
+
+  #menu-bars{
+    display: initial;
+  }
+
+  .navbar{
+    position: absolute;
+    top: -100%;
+    right: 0;
+    left: 0;
+  }
+  .navbar a{
+    display: block;
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  .header{
+    padding: 2rem;
+  }
+  .background-text h2{
+    width: 100%;
+    text-align: center;
+  }
+
+  nav{
+    position: absolute;
+    top: 100%;
+    background: var(--main-color);
+    width: 88%;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+
+  }
+  nav.active{
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+
+  }
+  nav a{
+    display: block;
+    margin: 1rem;
+    padding: 2rem 2rem;
+    border: 3px solid white;
+    font-size: 1.5rem;
+  }
+  .navbar-icons{
+    display: flex;
+    align-items: center;
+
+  }
+  .navbar-icons div{
+    margin: 1rem;
+  }
+
+  .footer-second-part img{
+      width: 15%;
+      margin-left: 50px;
+  }
+
+  .card_title {
+      font-size: 2.1rem;
+  }
+
+  .logo h1{
+    font-size: 24px;
+}
+
+.main5 p{
+  font-size: 20px;
+}
+
+.krediti{
+  font-size: 30px;
+}
+  
 }
