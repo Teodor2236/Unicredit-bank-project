@@ -21,11 +21,11 @@
    
 
     <nav class="menu">
-      <a href="Cards_Plans.html">Карти</a>
-      <a href=potrebitelskiKrediti.html>Потребителски кредит</a>
-      <a href="ipotechniKrediti.html">Ипотечен кредит</a>
-      <a href="investicionniFondove.html">Инвестиционни фондове</a>
-      <a href="leasing_page.html">Лизинг</a>
+      <a href="card-plans.html">Карти</a>
+      <a href="consumer-credit.html">Потребителски кредит</a>
+      <a href="mortgage.html">Ипотечен кредит</a>
+      <a href="investing-funds.html">Инвестиционни фондове</a>
+      <a href="leasing-page.html">Лизинг</a>
       <a href="">Депозити</a>
     </nav>
 
@@ -34,8 +34,6 @@
     </div>
   </header>
 
-  
-
   <div class="content">
     <div class="intro">
       <h1 id="welcome-message">Добре дошли в нашата система</h1>
@@ -43,7 +41,48 @@
     </div>
     <div class="main-container">
       <div class="main">
-        <ul class="cards">
+
+      <ul id="cards-container" class="cards">
+          <!-- Cards will be dynamically inserted here -->
+      </ul>
+  
+      <script>
+          async function loadProducts() {
+              try {
+                  const response = await fetch('http://localhost:8080/products/v1.0.0/get');
+                  const products = await response.json();
+                  console.log(products);
+  
+                  const cardsContainer = document.getElementById('cards-container')
+
+                  let cardsHTML = '';
+                  products.forEach(product => {
+                      cardsHTML += `
+                          <li class="cards_item">
+                              <div class="card">
+                                  <div class="card_image">
+                                      <img src="${product.imageUrl}" alt="${product.imageUrl}">
+                                  </div>
+                                  <div class="card_content">
+                                      <h2 class="card_title">${product.type}</h2>
+                                      <p class="card_text">${product.description}</p>
+                                      <button class="btn card_btn">Научете повече тук</button>
+                                  </div>
+                              </div>
+                          </li>
+                      `;
+                  });
+
+                  cardsContainer.innerHTML = cardsHTML;
+              } catch (error) {
+                  console.error('Error:', error);
+              }
+          }
+          window.onload = loadProducts;
+      </script>
+
+
+        <!-- <ul id="cards-template" class="cards">
           <li class="cards_item">
             <div class="card">
               <div class="card_image"><img src="../image/depozit.jpg"></div>
@@ -108,25 +147,20 @@
               </div>
             </div>
           </li>
-        </ul>
+        </ul> -->
+
+
       </div>
     </div>
     <footer class="main-footer">
-      <div class="main-inner-footer">
-        <div class="footer-content">
-          <a href="#">Карти</a>
-          <a href="">Потребителски кредит</a>
-          <a href="">Ипотечен кредит</a>
-          <a href="">Инвестиционни фондове</a>
-          <a href="">Лизинг</a>
-          <a href="">Депозити</a>
-        </div>
-
-      </div>
-
       <div class="footer-second-part">
         <p>2024 © UnicreditBulbank</p>
         <img src="../image/logo.png" alt="">
+      </div>
+      <div class="sources">
+        <a href="https://www.facebook.com/unicreditbulbank/" class="fa fa-facebook"></a>
+        <a href="https://www.instagram.com/unicredit_eu/?hl=bg" class="fa fa-instagram"></a>
+        <a href="https://x.com/unicreditbg?lang=bg" class="fa fa-twitter"></a>
       </div>
     </footer>
     <script src="../js/script.js"></script>

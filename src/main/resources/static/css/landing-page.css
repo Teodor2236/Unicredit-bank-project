@@ -113,14 +113,10 @@ a:hover {
 /* -------------------Footer---------------- */
 .main-footer{
     background: #ececec;
-    box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: 0;
     padding: 1rem;
-<<<<<<< HEAD
-    width: 100%;
-=======
     width:100%;
->>>>>>> 0da49fbb021462c8904e5e656aac36819db3dbc9
 }
 
 .main-inner-footer{
@@ -129,21 +125,6 @@ a:hover {
     flex-wrap: wrap;
 }
 
-.footer-content{
-    margin: 0 auto;
-    padding: 1rem;
-    text-align: center;
-}
-
-.footer-content img{
-    width: 100px;
-}
-
-.footer-content a{
-    display: block;
-    font-size: 1.5rem;
-    padding: 1rem;
-}
 
 .logo-text{
     font-size: 2.5rem;
@@ -153,7 +134,6 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 2px solid gray;
     padding: 20px;
     font-size: 20px;
 }
@@ -163,6 +143,33 @@ a:hover {
     margin-left: 50px;
 }
 
+
+.fa {
+    text-align: center;
+    text-decoration: none;
+    color: rgb(72, 69, 69);
+    margin-right: 25px;
+    font-size: 24px !important; 
+  
+}
+
+.sources{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .sources a {
+    color: rgb(99, 89, 89);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 32px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  .sources a:hover {
+    color: gray;
+  } 
 /* ------------------Cards--------------------- */
 .main{
     max-width: 1200px;
@@ -356,19 +363,15 @@ body {
     }
   }
 
-@media (max-width:811px ){
-    .card_text {
-        font-size: 18px;
-    }
-}
-
-@media (max-width:811px ){
+@media (max-width:811px) {
     header{
         background-image: linear-gradient(130deg, white 40%, var(--main-color) -50%);
     }
-}
 
-@media (max-width:811px) {
+    .card_text {
+        font-size: 18px;
+    }
+
     html{
       font-size: 50%;
     }
@@ -406,7 +409,7 @@ body {
       background: var(--main-color);
       width: 100%;
       left: 0;
-      height: 100vh;
+      height: 50vh;
       clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
   
     }
@@ -416,7 +419,6 @@ body {
     }
     nav a{
       display: block;
-      background-color: var(--graycolortxt);
       margin: 1rem;
       padding: 2rem 2rem;
       border: 3px solid white;
@@ -430,4 +432,16 @@ body {
     .navbar-icons div{
       margin: 1rem;
     }
+
+    .footer-second-part img{
+        width: 15%;
+        margin-left: 50px;
+    }
+
+    .card_title {
+        font-size: 2.1rem;
+    }
+
+  
+    
 }

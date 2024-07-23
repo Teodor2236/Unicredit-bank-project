@@ -14,12 +14,5 @@ async function loadClient() {
     }
 }
 
-async function loadProducts() {
-    try {
-        const product = await get (`products/v1.0.0/get/${id}`);
-        const name = document.getElementByID("card-name");
-        name.innerText = ${products.type};
-    }
-}
-
 await loadClient();
+
