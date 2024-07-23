@@ -206,6 +206,10 @@ html {
 	height: 100%;
 }
 
+.menu a{
+  font-size:25px;
+  }
+
 body {
 
 	font-family: Nunito, Arial, Helvetica, sans-serif;
@@ -301,7 +305,7 @@ main :last-child,
 
 .title a {
 	padding: 1rem 1.25rem;
-	font-size: var(--size-accordion-title);
+	font-size:2rem;
 	font-weight: 800;
 	color: #fff;
 	text-decoration: none;
@@ -485,7 +489,6 @@ text-decoration:none;
       background: var(--main-color);
       width: 100%;
       left: 0;
-      height: 55vh;
       clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
   
     }
