@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -35,34 +36,34 @@ public class EmployeeService {
     }
 
     public EmployeeDTO getByEmployeeNumber(String employeeNumber) {
-        Employee employee = employeeRepository.findByEmployeeNumber(employeeNumber);
-        return modelMapper.map(employee, EmployeeDTO.class);
+        Optional<Employee> employeeOptional = employeeRepository.findByEmployeeNumber(employeeNumber);
+        return employeeOptional.map(employee -> modelMapper.map(employee, EmployeeDTO.class)).orElse(null);
     }
 
     public EmployeeDTO getByEGN(String EGN) {
-        Employee employee = employeeRepository.findByEGN(EGN);
-        return modelMapper.map(employee, EmployeeDTO.class);
+        Optional<Employee> employeeOptional = employeeRepository.findByEGN(EGN);
+        return employeeOptional.map(employee -> modelMapper.map(employee, EmployeeDTO.class)).orElse(null);
     }
 
     public EmployeeDTO updateByEmployeeNumber(String employeeNumber, EmployeeDTO employeeDTO) {
-        Employee existingEmployee = employeeRepository.findByEmployeeNumber(employeeNumber);
+        Optional<Employee> existingEmployeeOptional = employeeRepository.findByEmployeeNumber(employeeNumber);
 
-        if (existingEmployee != null) {
-            modelMapper.map(employeeDTO, existingEmployee);
-            Employee updatedEmployee = employeeRepository.save(existingEmployee);
-            return modelMapper.map(updatedEmployee, EmployeeDTO.class);
+        if (existingEmployeeOptional.isEmpty()) {
+            return null;
         }
-        return null;
+        Employee existingEmployee = existingEmployeeOptional.get();
+        modelMapper.map(employeeDTO, existingEmployee);
+        Employee updatedEmployee = employeeRepository.save(existingEmployee);
+        return modelMapper.map(updatedEmployee, EmployeeDTO.class);
     }
 
     public boolean deleteByEmployeeNumber(String employeeNumber) {
-        Employee existingEmployee = employeeRepository.findByEmployeeNumber(employeeNumber);
+        Optional<Employee> existingEmployeeOptional = employeeRepository.findByEmployeeNumber(employeeNumber);
 
-        if (existingEmployee != null) {
-            employeeRepository.delete(existingEmployee);
+        if (existingEmployeeOptional.isEmpty()) {
+            employeeRepository.delete(existingEmployeeOptional.get());
             return true;
         }
         return false;
     }
-
 }
