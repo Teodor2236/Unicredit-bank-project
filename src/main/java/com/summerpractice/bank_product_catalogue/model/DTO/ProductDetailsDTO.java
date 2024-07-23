@@ -12,10 +12,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductDetailsDTO {
-    private Product productId;
-    private Plan planType;
-    private Loan loanType;
-    private Investment investmentType;
+    private Product product;
+    private PlanDTO planType;
+    private LoanDTO loanType;
+    private InvestmentDTO investmentType;
     private double price;
     private String currency;
     private double interestRate;
