@@ -1,6 +1,6 @@
 package com.summerpractice.bank_product_catalogue.controller;
 
-import com.summerpractice.bank_product_catalogue.model.entity.Plan;
+import com.summerpractice.bank_product_catalogue.model.DTO.PlanDTO;
 import com.summerpractice.bank_product_catalogue.service.PlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +22,8 @@ public class PlanController {
     }
 
     @GetMapping("/get-all")
-    ResponseEntity<List<Plan>> getAll() {
-        List<Plan> plans = planService.getAll();
+    ResponseEntity<List<PlanDTO>> getAll() {
+        List<PlanDTO> plans = planService.getAll();
 
         if (plans.isEmpty()) {
             return ResponseEntity.noContent().build();
