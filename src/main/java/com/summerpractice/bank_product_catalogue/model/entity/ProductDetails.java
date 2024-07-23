@@ -1,8 +1,5 @@
 package com.summerpractice.bank_product_catalogue.model.entity;
 
-import com.summerpractice.bank_product_catalogue.model.enums.Investment;
-import com.summerpractice.bank_product_catalogue.model.enums.Loan;
-import com.summerpractice.bank_product_catalogue.model.enums.Plan;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -20,20 +17,19 @@ public class ProductDetails {
     @OneToOne(fetch = FetchType.EAGER)
     private Product productId;
 
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "plan_type")
-    private Plan planType;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "loan_type")
-    private Loan loanType;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "investment_type")
-    private Investment investmentType;
-
     private double price;
     private String currency;
     private double interestRate;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "plan_type", referencedColumnName = "id")
+    private Plan planType;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "loan_type", referencedColumnName = "id")
+    private Loan loanType;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "investment_type", referencedColumnName = "id")
+    private Investment investmentType;
 }
