@@ -29,6 +29,10 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+.menu a{
+    font-size:25px;
+
+}
 
 .content {
     flex: 1;
@@ -409,7 +413,6 @@ body {
       background: var(--main-color);
       width: 100%;
       left: 0;
-      height: 50vh;
       clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
   
     }
