@@ -1,3 +1,4 @@
+
 * {
     padding: 0;
     margin: 0;
@@ -7,7 +8,7 @@
 }
 
 #gradient {
-    background-image: linear-gradient(to right, azure, #960707);
+    background-image: linear-gradient(to right, azure, rgb(228, 97, 95));
     background-repeat: no-repeat;
 }
 
@@ -180,4 +181,50 @@ a {
 
 }
 
-  
+  .popup {
+      border-radius:20px;
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 60px;
+      background: #fff;
+      border: 3px solid #ccc;
+      z-index: 9999;
+  }
+  .popup input{
+  margin:10px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  width:80%;
+  }
+  .popup #buttonContainers{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 80%;
+      margin: 10%;
+      padding:10px
+      }
+  .popup button{
+  margin: 5% auto;
+  border: 2px solid;
+  padding: 20px;
+  border-radius:30px;
+  }
+  .popup .puLabel{
+  font-size:10px;
+  background-color:white;
+  }
+  .popup h1{
+  text-align:center;}
+  .popup p{
+  text-align:center;
+  margin:10px;
+  font-size:12px;
+  }
+  .popup input[type=text]:focus {
+         border: 3px solid #555;
+       }
