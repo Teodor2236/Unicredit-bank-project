@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -37,23 +38,29 @@ public class ProductService {
     }
 
     public ProductDTO getById(Long id) {
-        Product product = productRepository.findById(id).orElse(null);
-        return modelMapper.map(product, ProductDTO.class);
+        Optional<Product> productOptional = productRepository.findById(id);
+        return productOptional.map(product -> modelMapper.map(product, ProductDTO.class)).orElse(null);
     }
 
     public ProductDTO update(Long id, ProductDTO productDTO) {
-        Product product = productRepository.findById(id).orElse(null);
+        Optional<Product> productOptional = productRepository.findById(id);
+
+        if (productOptional.isEmpty()) {
+            return null;
+        }
+        Product product = productOptional.get();
         modelMapper.map(productDTO, product);
-        return modelMapper.map(product, ProductDTO.class);
+        Product updatedProduct = productRepository.save(product);
+        return modelMapper.map(updatedProduct, ProductDTO.class);
     }
 
     public boolean delete(Long id) {
-        Product product = productRepository.findById(id).orElse(null);
+        Optional<Product> productOptional = productRepository.findById(id);
 
-        if (product != null) {
-            productRepository.delete(product);
-            return true;
+        if (productOptional.isEmpty()) {
+            return false;
         }
-        return false;
+        productRepository.delete(productOptional.get());
+        return true;
     }
 }

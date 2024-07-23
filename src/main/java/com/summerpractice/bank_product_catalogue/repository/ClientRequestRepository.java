@@ -11,5 +11,4 @@ public interface ClientRequestRepository extends JpaRepository<ClientRequest, Lo
     List<ClientRequest> findByClientId(Long clientId);
     List<ClientRequest> findByProductDetailsId(Long productDetailsId);
     List<ClientRequest> findByClientIdAndProductDetailsId(Long clientId, Long productDetailsId);
-
 }
