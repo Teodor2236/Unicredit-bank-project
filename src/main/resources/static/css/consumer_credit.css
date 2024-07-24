@@ -6,17 +6,17 @@
     --blackcolor:#1B1B1B;
     --shadow:#dee1e8;
 }
-  
+
 *{
     font-family: 'Nunito', sans-serif;
-    margin:0; 
+    margin:0;
     padding:0;
     box-sizing: border-box;
     border:none;
     text-decoration: none;
     transition:all .2s linear;
 }
-  
+
 html{
     font-size: 62.5%;
     overflow-x: hidden;
@@ -49,7 +49,7 @@ header{
     background-image: linear-gradient(130deg, white 22%, var(--main-color) -50%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     z-index: 1000;
-    
+
 }
 
 .main-body{
@@ -76,7 +76,7 @@ box-shadow:none;
 }
 header .logo {
     display: flex;
-    align-items: center; 
+    align-items: center;
 }
 
 header .logo img {
@@ -145,7 +145,7 @@ a:hover {
     margin-left: 3%;
     margin-right: 3%;
 }
-  
+
 .butoniii{
     display: flex;
     justify-content: space-around;
@@ -178,7 +178,7 @@ color:black;
     transition: all 0.2s ease-in;
     height: 10%;
   }
-  
+
   .vhod:hover {
     background: #90EE90;
     /* box-shadow: 0 0 30px 5px red; */
@@ -186,13 +186,13 @@ color:black;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
   }
-  
+
   .vhod:hover::before {
     -webkit-animation: sh02 0.5s 0s linear;
     -moz-animation: sh02 0.5s 0s linear;
     animation: sh02 0.5s 0s linear;
   }
-  
+
   .vhod::before {
     content: '';
     display: block;
@@ -219,17 +219,17 @@ color:black;
       opacity: 0;
       left: 0%;
     }
-  
+
     50% {
       opacity: 1;
     }
-  
+
     to {
       opacity: 0;
       left: 100%;
     }
   }
-  
+
   .vhod:active {
     box-shadow: 0 0 0 0 transparent;
     -webkit-transition: box-shadow 0.2s ease-in;
@@ -252,13 +252,13 @@ color:black;
     --blackcolor:#1B1B1B;
     --shadow:#dee1e8;
   }
-  
-  
+
+
   body {
     flex-direction: column;
     min-height: 100vh;
   }
-  
+
   header{
     padding: 2rem 7%;
     position: fixed;
@@ -271,25 +271,25 @@ color:black;
     background-image: linear-gradient(130deg, white 22%, var(--main-color) -50%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     z-index: 1000;
-    
+
   }
-  
-  
+
+
   header .logo {
     display: flex;
-    align-items: center; 
+    align-items: center;
   }
-  
+
   header .logo img {
     width: 40px;
   }
-  
+
   header .logo h1 {
     margin-left: 20px;
     font-family: cursive;
     color: rgb(20, 18, 18);
   }
-  
+
   nav a{
     font-size: 1.5rem;
     padding: 1rem;
@@ -297,7 +297,7 @@ color:black;
     color: white;
     font-size: 20px;
   }
-  
+
   a {
     box-shadow: inset 0 0 0 0;
     color: #960707;
@@ -312,14 +312,15 @@ color:black;
     color: var(--blackcolor);
     box-shadow: inset 200px 0 0 0 #e16477;
   }
-  
+
   #navbar{
     color: white;
     font-size: 2rem;
     cursor: pointer;
     display: none;
   }
-  
+
+
 
 /* -------------------Footer---------------- */
 .main-footer{
@@ -359,7 +360,7 @@ color:black;
   text-decoration: none;
   color: rgb(72, 69, 69);
   margin-right: 25px;
-  font-size: 24px !important; 
+  font-size: 24px !important;
 
 }
 
@@ -379,7 +380,8 @@ color:black;
 
 .sources a:hover {
   color: gray;
-} 
+}
+
 
 /*-------------------------------------Responsive-Part--------------------------------------------*/
 @media (min-width: 40rem) {
@@ -411,7 +413,7 @@ color:black;
   }
 
   #menu-bars{
-    display: initial;  
+    display: initial;
   }
 
   .navbar{
@@ -458,7 +460,7 @@ color:black;
   .navbar-icons{
     display: flex;
     align-items: center;
-   
+
   }
   .navbar-icons div{
     margin: 1rem;
@@ -485,5 +487,5 @@ color:black;
 .krediti{
   font-size: 30px;
 }
-  
+
 }
