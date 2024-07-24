@@ -27,11 +27,12 @@ public class ClientRequestController {
 
 	@GetMapping("/get")
 	public ResponseEntity<List<ClientRequestDTO>> getAll(
+			@RequestParam(required = false) Long clientId,
 			@RequestParam(required = false) ActionType actionType,
 			@RequestParam(required = false) String fromDate,
 			@RequestParam(required = false) String toDate) {
 
-		List<ClientRequestDTO> clientRequests = clientRequestService.getAll(actionType, fromDate, toDate);
+		List<ClientRequestDTO> clientRequests = clientRequestService.getAll(clientId, actionType, fromDate, toDate);
 
 		if (clientRequests.isEmpty()) {
 			return ResponseEntity.noContent().build();

@@ -19,10 +19,10 @@ import java.util.stream.Collectors;
 @Service
 public class ClientRequestService {
 
-    private final ClientRequestRepository clientRequestRepository;
-    private final ClientRepository clientRepository;
-    private final ProductDetailsRepository productDetailsRepository;
-    private final ModelMapper modelMapper;
+	private final ClientRequestRepository clientRequestRepository;
+	private final ClientRepository clientRepository;
+	private final ProductDetailsRepository productDetailsRepository;
+	private final ModelMapper modelMapper;
 
 	public ClientRequestService(ClientRequestRepository clientRequestRepository, ModelMapper modelMapper,
 			ClientRepository clientRepository, ProductDetailsRepository productDetailsRepository) {
@@ -32,71 +32,77 @@ public class ClientRequestService {
 		this.productDetailsRepository = productDetailsRepository;
 	}
 
-    public ClientRequestDTO create(ClientRequestDTO clientRequestDTO) {
-        Client client = clientRepository.getReferenceById(clientRequestDTO.getClientId());
-        ProductDetails productDetails = productDetailsRepository.getReferenceById(clientRequestDTO.getProductDetailsId());
-        ClientRequest clientRequest = new ClientRequest();
-        clientRequest.setActionType(clientRequestDTO.getActionType().toString());
-        clientRequest.setClient(client);
-        clientRequest.setInvestmentAmount(clientRequestDTO.getInvestmentAmount());
-        clientRequest.setInvestmentTermInMonths(clientRequestDTO.getInvestmentTermInMonths());
-        clientRequest.setLoanAmount(clientRequestDTO.getLoanAmount());
-        clientRequest.setLoanTermInMonths(clientRequestDTO.getLoanTermInMonths());
-        clientRequest.setProductDetails(productDetails);
+	public ClientRequestDTO create(ClientRequestDTO clientRequestDTO) {
+		Client client = clientRepository.getReferenceById(clientRequestDTO.getClientId());
+		ProductDetails productDetails = productDetailsRepository
+				.getReferenceById(clientRequestDTO.getProductDetailsId());
+		ClientRequest clientRequest = new ClientRequest();
+		clientRequest.setActionType(clientRequestDTO.getActionType().toString());
+		clientRequest.setClient(client);
+		clientRequest.setInvestmentAmount(clientRequestDTO.getInvestmentAmount());
+		clientRequest.setInvestmentTermInMonths(clientRequestDTO.getInvestmentTermInMonths());
+		clientRequest.setLoanAmount(clientRequestDTO.getLoanAmount());
+		clientRequest.setLoanTermInMonths(clientRequestDTO.getLoanTermInMonths());
+		clientRequest.setProductDetails(productDetails);
 
-        ClientRequest savedClientRequest = clientRequestRepository.save(clientRequest);
-        return modelMapper.map(savedClientRequest, ClientRequestDTO.class);
-    }
+		ClientRequest savedClientRequest = clientRequestRepository.save(clientRequest);
+		return modelMapper.map(savedClientRequest, ClientRequestDTO.class);
+	}
 
-    public List<ClientRequestDTO> getAll(ActionType actionType, String fromDate, String toDate) {
-        List<ClientRequest> clientRequests = clientRequestRepository.findAll();
-        return clientRequests.stream()
-                .map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
-                .collect(Collectors.toList());
-    }
-    public ClientRequestDTO getById(Long id) {
-        Optional<ClientRequest> clientRequest = clientRequestRepository.findById(id);
-        return clientRequest.map(cr -> modelMapper.map(cr, ClientRequestDTO.class)).orElse(null);
-    }
+	public List<ClientRequestDTO> getAll(Long clientId, ActionType actionType, String fromDate, String toDate) {
+		List<ClientRequest> clientRequests;
+		if (actionType.equals(ActionType.ALL)) {
+			clientRequests = clientRequestRepository.findByClientIdOrderByCreatedDateAsc(clientId);
+		} else {
+			clientRequests = clientRequestRepository.findByClientIdAndActionTypeOrderByCreatedDateAsc(clientId,
+					actionType.name());
+		}
 
-    public ClientRequestDTO update(Long id, ClientRequestDTO clientRequestDTO) {
-        Optional<ClientRequest> existingClientRequest = clientRequestRepository.findById(id);
-        if (existingClientRequest.isPresent()) {
-            ClientRequest clientRequest = existingClientRequest.get();
-            modelMapper.map(clientRequestDTO, clientRequest);
-            ClientRequest updatedClientRequest = clientRequestRepository.save(clientRequest);
-            return modelMapper.map(updatedClientRequest, ClientRequestDTO.class);
-        }
-        return null;
-    }
+		return clientRequests.stream().map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
+				.collect(Collectors.toList());
+	}
 
-    public boolean delete(Long id) {
-        Optional<ClientRequest> clientRequest = clientRequestRepository.findById(id);
-        if (clientRequest.isPresent()) {
-            clientRequestRepository.delete(clientRequest.get());
-            return true;
-        }
-        return false;
-    }
+	public ClientRequestDTO getById(Long id) {
+		Optional<ClientRequest> clientRequest = clientRequestRepository.findById(id);
+		return clientRequest.map(cr -> modelMapper.map(cr, ClientRequestDTO.class)).orElse(null);
+	}
 
-    public List<ClientRequestDTO> getByClientId(Long clientId) {
-        List<ClientRequest> clientRequests = clientRequestRepository.findByClientId(clientId);
-        return clientRequests.stream()
-                .map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
-                .collect(Collectors.toList());
-    }
+	public ClientRequestDTO update(Long id, ClientRequestDTO clientRequestDTO) {
+		Optional<ClientRequest> existingClientRequest = clientRequestRepository.findById(id);
+		if (existingClientRequest.isPresent()) {
+			ClientRequest clientRequest = existingClientRequest.get();
+			modelMapper.map(clientRequestDTO, clientRequest);
+			ClientRequest updatedClientRequest = clientRequestRepository.save(clientRequest);
+			return modelMapper.map(updatedClientRequest, ClientRequestDTO.class);
+		}
+		return null;
+	}
 
-    public List<ClientRequestDTO> getByProductDetailsId(Long productDetailsId) {
-        List<ClientRequest> clientRequests = clientRequestRepository.findByProductDetailsId(productDetailsId);
-        return clientRequests.stream()
-                .map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
-                .collect(Collectors.toList());
-    }
+	public boolean delete(Long id) {
+		Optional<ClientRequest> clientRequest = clientRequestRepository.findById(id);
+		if (clientRequest.isPresent()) {
+			clientRequestRepository.delete(clientRequest.get());
+			return true;
+		}
+		return false;
+	}
 
-    public List<ClientRequestDTO> getByClientIdAndProductDetailsId(Long clientId, Long productDetailsId) {
-        List<ClientRequest> clientRequests = clientRequestRepository.findByClientIdAndProductDetailsId(clientId, productDetailsId);
-        return clientRequests.stream()
-                .map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
-                .collect(Collectors.toList());
-    }
+	public List<ClientRequestDTO> getByClientId(Long clientId) {
+		List<ClientRequest> clientRequests = clientRequestRepository.findByClientId(clientId);
+		return clientRequests.stream().map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
+				.collect(Collectors.toList());
+	}
+
+	public List<ClientRequestDTO> getByProductDetailsId(Long productDetailsId) {
+		List<ClientRequest> clientRequests = clientRequestRepository.findByProductDetailsId(productDetailsId);
+		return clientRequests.stream().map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
+				.collect(Collectors.toList());
+	}
+
+	public List<ClientRequestDTO> getByClientIdAndProductDetailsId(Long clientId, Long productDetailsId) {
+		List<ClientRequest> clientRequests = clientRequestRepository.findByClientIdAndProductDetailsId(clientId,
+				productDetailsId);
+		return clientRequests.stream().map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
+				.collect(Collectors.toList());
+	}
 }
