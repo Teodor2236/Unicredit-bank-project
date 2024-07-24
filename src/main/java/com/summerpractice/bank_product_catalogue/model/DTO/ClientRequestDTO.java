@@ -1,5 +1,7 @@
 package com.summerpractice.bank_product_catalogue.model.DTO;
 
+import java.time.LocalDateTime;
+
 import com.summerpractice.bank_product_catalogue.model.enums.ActionType;
 
 import lombok.*;
@@ -17,6 +19,7 @@ public class ClientRequestDTO {
     private double investmentAmount;
     private int investmentTermInMonths;
     private ActionType actionType;
+    private LocalDateTime createdDate;
 
 	public Long getClientId() {
 		return clientId;
@@ -60,5 +63,10 @@ public class ClientRequestDTO {
 	public void setActionType(ActionType actionType) {
 		this.actionType = actionType;
 	}
-
+	public LocalDateTime getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(LocalDateTime createdDate) {
+		this.createdDate = createdDate;
+	}
 }

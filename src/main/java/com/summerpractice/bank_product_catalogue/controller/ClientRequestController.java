@@ -1,7 +1,6 @@
 package com.summerpractice.bank_product_catalogue.controller;
 
 import com.summerpractice.bank_product_catalogue.model.DTO.ClientRequestDTO;
-import com.summerpractice.bank_product_catalogue.model.entity.ClientRequest;
 import com.summerpractice.bank_product_catalogue.model.enums.ActionType;
 import com.summerpractice.bank_product_catalogue.service.ClientRequestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,18 +20,19 @@ public class ClientRequestController {
 	}
 
 	@PostMapping("/create")
-	public ResponseEntity<ClientRequest> create(@RequestBody ClientRequestDTO clientRequestDTO) {
-		ClientRequest createdClientRequest = clientRequestService.create(clientRequestDTO);
+	public ResponseEntity<ClientRequestDTO> create(@RequestBody ClientRequestDTO clientRequestDTO) {
+		ClientRequestDTO createdClientRequest = clientRequestService.create(clientRequestDTO);
 		return ResponseEntity.ok(createdClientRequest);
 	}
 
 	@GetMapping("/get")
 	public ResponseEntity<List<ClientRequestDTO>> getAll(
+			@RequestParam(required = false) Long clientId,
 			@RequestParam(required = false) ActionType actionType,
 			@RequestParam(required = false) String fromDate,
 			@RequestParam(required = false) String toDate) {
 
-		List<ClientRequestDTO> clientRequests = clientRequestService.getAll(actionType, fromDate, toDate);
+		List<ClientRequestDTO> clientRequests = clientRequestService.getAll(clientId, actionType, fromDate, toDate);
 
 		if (clientRequests.isEmpty()) {
 			return ResponseEntity.noContent().build();
