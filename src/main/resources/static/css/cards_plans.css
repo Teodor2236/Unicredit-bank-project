@@ -231,11 +231,15 @@ main > h1 {
 	margin-bottom: 1.25rem;
 	color: #fff;
 }
-
+.main-body-title{
+    font-size: 5em;
+}
 ::selection {
         background-color: rgba(240, 0, 0, 0.8);
 }
-
+.accordion-image {
+    width: 100%;
+}
 .accordion {
 	--circle-x: 1.8rem;
 	--circle-y: 0;
