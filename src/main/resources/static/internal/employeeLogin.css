@@ -10,13 +10,23 @@
     background-repeat: no-repeat;
 }
 
-.main2{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 1%;
-    background-image: none;
-    flex-grow: 1;
-  }
+
+ .image-login{
+    display:flex;
+        justify-content:center;
+        flex-direction:column;
+        height: 100vh;
+        background-image: url('../image/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+ }
 
   .admLog{
     display: flex;
@@ -24,6 +34,16 @@
     justify-content: space-between;
     align-items: center;
     background-image: none;
+    gap:12px;
+    height:100%;
+    background-color:white;
+    padding-left:5%;
+    padding-right:5%;
+    padding-top:3%;
+    padding-bottom:5%;
+    margin-bottom:7%;
+    opacity:0.9;
+    border-radius:25px;
   }
   
   .vhod2 {
@@ -44,6 +64,7 @@
     transition: all 0.2s ease-in;
     height: 10%;
     background-image: none;
+    margin-bottom:15px;
   }
   
   .vhod2:hover {
@@ -144,12 +165,17 @@
 } */
 
 .logo2{
-  margin-left: 3%;
+  margin-left: 7%;
   margin-right: 7%;
   background-image: none;
+  display:flex;
+  justify-content:flex-start;
+  width:100%;
+  margin-top:5%;
 }
 img, h2, div {
   background-image: none;
+  color:black;
 }
 body{
   height: 100vh;
