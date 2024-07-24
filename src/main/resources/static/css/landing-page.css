@@ -112,6 +112,8 @@ a:hover {
     background-position: center;
     background-size: cover;
     width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 /* -------------------Footer---------------- */
@@ -221,7 +223,7 @@ img {
 .cards_item {
     display: flex;
     padding: 1rem;
-    flex: 1 1 calc(33.3333% - 2rem); /* Adjust to have 3 cards per row */
+    flex: 1 1 calc(33.3333% - 2rem); /* Adjust to have 3 cards per row on larger screens */
     box-sizing: border-box;
 }
 
@@ -444,6 +446,16 @@ body {
     .card_title {
         font-size: 2.1rem;
     }
+
+    .cards_item {
+            flex: 1 1 100%; /* Make each card take full width on mobile */
+            margin-bottom: 1rem; /* Optional: Add some margin between cards */
+        }
+
+        /* Ensure the cards container does not overflow */
+        .cards {
+            flex-direction: column; /* Stack cards vertically */
+        }
 
   
     
