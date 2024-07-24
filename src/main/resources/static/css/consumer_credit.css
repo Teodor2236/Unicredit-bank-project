@@ -440,7 +440,7 @@ color:black;
     background: var(--main-color);
     width: 100%;
     left: 0;
-    height: 55vh;
+    height: auto;
     clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
 
   }
