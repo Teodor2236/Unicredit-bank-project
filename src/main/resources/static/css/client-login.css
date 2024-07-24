@@ -120,8 +120,40 @@ button:hover {
         padding: 6px;
         font-size: 12px;
     }
-}
+    .popup{
+    font-size: 0.7rem;
+    padding:0.5rem;
 
+    }
+}
+@media (max-height: 380px) { /* Phones and smaller devices */
+    .main-part {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .main-part .logo {
+        width: 60px; /* Adjust size as needed */
+    }
+
+    .form-group label,
+    .form-group input,
+    button {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 6px;
+        font-size: 12px;
+    }
+    .popup{
+    font-size: 0.7rem;
+    padding:0.5rem;
+
+    }
+    .popup button{
+    margin: 0% auto;}
+}
 
 .popup input[type=text]:focus {
        border: 3px solid #555;
@@ -158,10 +190,11 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 60px;
+    padding: 10%;
     background: #fff;
     border: 3px solid #ccc;
     z-index: 9999;
+    width:70%;
 }
 .popup input{
 margin:10px;
@@ -174,8 +207,8 @@ width:80%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 80%;
-    margin: 10%;
+    width: 60%;
+    margin-left: 10%;
     padding:10px
     }
 .popup button{
@@ -198,3 +231,14 @@ font-size:12px;
 .popup input[type=text]:focus {
        border: 3px solid #555;
      }
+
+             #bad-input{
+             border-radius:15px;
+             font-size: 0.7rem;
+             border: 3px solid  white;
+             background-color:red;
+             color:white;
+             padding:5%;
+             margin:3%;
+             }
+

@@ -2,11 +2,17 @@ import {get, post} from "../js/requester.js";
 
 const submitBtn = document.getElementById('submitBtn');
 const landingButton = document.getElementById('landing-page-login-button')
-
+const warningContainer= document.getElementById('main-part')
+let elementExists=false;
 localStorage.clear();
-
+function removeElement(id='bad-input') {
+    var elem = document.getElementById(id);
+    return elem.parentNode.removeChild(elem);
+}
 landingButton.addEventListener('click', async function () {
-
+    if(elementExists){
+        removeElement('bad-input')
+        elementExists=false;}
     await fetchAndSaveClient()
 });
 
@@ -17,7 +23,12 @@ async function fetchAndSaveClient() {
         const inputNumber = document.getElementById('customer-number-input-field').value;
 
         if (inputNumber.length < 9 || inputNumber.length > 10) {
-            alert("Wrong format. Enter a valid EGN (10 symbols) or Client number (9 symbols).")
+
+        const warningBadInput = document.createElement('div');
+        warningBadInput.id="bad-input";
+        warningBadInput.textContent = 'Wrong format. Enter a valid EGN (10 symbols) or Client number (9 symbols).';
+        warningContainer.appendChild(warningBadInput);
+        elementExists=true;
             return
         }
         if (inputNumber.length === 9) {
