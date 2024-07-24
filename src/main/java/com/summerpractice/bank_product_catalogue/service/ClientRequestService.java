@@ -32,7 +32,7 @@ public class ClientRequestService {
 		this.productDetailsRepository = productDetailsRepository;
 	}
 
-    public ClientRequestDTO create(ClientRequestDTO clientRequestDTO) {
+    public ClientRequest create(ClientRequestDTO clientRequestDTO) {
         Client client = clientRepository.getReferenceById(clientRequestDTO.getClientId());
         ProductDetails productDetails = productDetailsRepository.getReferenceById(clientRequestDTO.getProductDetailsId());
         ClientRequest clientRequest = new ClientRequest();
@@ -45,7 +45,7 @@ public class ClientRequestService {
         clientRequest.setProductDetails(productDetails);
 
         ClientRequest savedClientRequest = clientRequestRepository.save(clientRequest);
-        return modelMapper.map(savedClientRequest, ClientRequestDTO.class);
+        return savedClientRequest;
     }
 
     public List<ClientRequestDTO> getAll(ActionType actionType, String fromDate, String toDate) {
