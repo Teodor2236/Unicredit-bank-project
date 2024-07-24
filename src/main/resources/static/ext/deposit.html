@@ -68,6 +68,12 @@
         <a href="https://x.com/unicreditbg?lang=bg" class="fa fa-twitter"></a>
     </div>
 </footer>
-<script src="../js/investing-funds.js"></script>
+<script>
+    let menu = document.querySelector("#navbar");
+    let nav = document.querySelector(".menu");
+    menu.onclick = () => {
+    menu.classList.toggle("fa-times");
+    nav.classList.toggle("active");
+};</script>>
 </body>
 </html>
