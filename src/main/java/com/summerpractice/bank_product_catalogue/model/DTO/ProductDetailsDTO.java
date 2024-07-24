@@ -1,9 +1,6 @@
 package com.summerpractice.bank_product_catalogue.model.DTO;
 
-import com.summerpractice.bank_product_catalogue.model.entity.Investment;
-import com.summerpractice.bank_product_catalogue.model.entity.Loan;
-import com.summerpractice.bank_product_catalogue.model.entity.Plan;
-import com.summerpractice.bank_product_catalogue.model.entity.Product;
+import com.summerpractice.bank_product_catalogue.model.entity.*;
 import lombok.*;
 
 @Getter
@@ -20,4 +17,5 @@ public class ProductDetailsDTO {
     private double price;
     private String currency;
     private double interestRate;
+    private LeasingDTO leasingType;
 }

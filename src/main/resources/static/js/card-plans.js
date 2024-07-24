@@ -39,7 +39,7 @@ async function loadPlans() {
             `;
         });
 
-        plansContainer.innerHTML = plansHTML;
+        plansContainer.innerHTML += plansHTML;
         setupButtons();
     } catch (e) {
         alert(`Error: ${e}`);

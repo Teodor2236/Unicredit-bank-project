@@ -32,4 +32,8 @@ public class ProductDetails {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "investment_type", referencedColumnName = "id", nullable = true)
     private Investment investmentType;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "leasing_type", referencedColumnName = "id", nullable = true)
+    private Leasing leasingType;
 }
