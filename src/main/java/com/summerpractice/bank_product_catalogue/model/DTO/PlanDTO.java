@@ -11,5 +11,6 @@ public class PlanDTO {
 
     private String type;
     private String description;
+    private String imageUrl;
 
 }

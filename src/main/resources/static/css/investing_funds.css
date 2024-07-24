@@ -423,7 +423,7 @@ a:hover {
     position: absolute;
     top: 100%;
     background: var(--main-color);
-    width: 88%;
+    width: 100%;
     left: 0;
     clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
 

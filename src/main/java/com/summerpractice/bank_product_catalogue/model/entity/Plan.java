@@ -17,4 +17,7 @@ public class Plan {
 
     @Column(name = "description")
     private String description;
+
+    @Column(name = "imageUrl")
+    private String imageUrl;
 }

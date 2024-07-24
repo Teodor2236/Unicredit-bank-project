@@ -11,4 +11,5 @@ public class LoanDTO {
 
     private String type;
     private String description;
+    private String imageUrl;
 }
