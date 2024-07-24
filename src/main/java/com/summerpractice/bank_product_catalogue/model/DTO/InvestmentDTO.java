@@ -10,4 +10,5 @@ import lombok.*;
 public class InvestmentDTO {
     private String type;
     private String description;
+    private String imageUrl;
 }
