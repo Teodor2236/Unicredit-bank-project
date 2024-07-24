@@ -7,29 +7,47 @@ menu.onclick = () => {
 };
 
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("s-sum");
-output.value = slider.value;
+var sumSlider = document.getElementById("myRange");
+var sumInput = document.getElementById("s-sum");
+sumInput.value = sumSlider.value;
 
-slider.oninput = function() {
-  output.value = this.value;
+sumSlider.oninput = function() {
+  sumInput.value = this.value;
+  calc();
 }
 
-var slider = document.getElementById("myRange2");
-var output2 = document.getElementById("p-period");
-output2.value = slider.value;
-
-slider.oninput = function() {
-  output2.value = this.value;
+sumInput.oninput = function() {
+  sumSlider.value = this.value;
+  calc();
 }
 
-var slider = document.getElementById("myRange3");
-var output3 = document.getElementById("m-installment");
-output3 = (output.value / output2.value);
-output3.value = slider.value;
+var periodSlider = document.getElementById("myRange2");
+var periodInput = document.getElementById("p-period");
+periodInput.value = periodSlider.value;
 
-slider.oninput = function() {
-  output3.value = this.value;
+periodSlider.oninput = function() {
+  periodInput.value = this.value;
+  calc();
 }
+
+periodInput.oninput = function() {
+  periodSlider.value = this.value;
+  calc();
+}
+
+
+function calc() {
+    var suma = parseFloat(sumInput.value);
+    var period = parseFloat(periodInput.value);
+    var mesVnoska = document.getElementById("m-installment");
+
+    var mesLihva = parseFloat(2.69 / 100 / 12);
+
+    mesVnoska.value = ((mesLihva * suma * Math.pow((1 + mesLihva), period))
+    / (Math.pow((1 + mesLihva), period) - 1)).toFixed(2);
+}
+
+
+calc();
 
 
