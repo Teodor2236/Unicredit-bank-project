@@ -1,5 +1,7 @@
 package com.summerpractice.bank_product_catalogue.model.DTO;
 
+import com.summerpractice.bank_product_catalogue.model.enums.ActionType;
+
 import lombok.*;
 
 @Getter
@@ -8,10 +10,55 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClientRequestDTO {
-    private ClientDTO client;
-    private ProductDetailsDTO productDetails;
+    private Long clientId;
+    private Long productDetailsId;
     private double loanAmount;
     private int loanTermInMonths;
     private double investmentAmount;
     private int investmentTermInMonths;
+    private ActionType actionType;
+
+	public Long getClientId() {
+		return clientId;
+	}
+	public void setClientId(Long clientId) {
+		this.clientId = clientId;
+	}
+	public Long getProductDetailsId() {
+		return productDetailsId;
+	}
+	public void setProductDetailsId(Long productDetailsId) {
+		this.productDetailsId = productDetailsId;
+	}
+	public double getLoanAmount() {
+		return loanAmount;
+	}
+	public void setLoanAmount(double loanAmount) {
+		this.loanAmount = loanAmount;
+	}
+	public int getLoanTermInMonths() {
+		return loanTermInMonths;
+	}
+	public void setLoanTermInMonths(int loanTermInMonths) {
+		this.loanTermInMonths = loanTermInMonths;
+	}
+	public double getInvestmentAmount() {
+		return investmentAmount;
+	}
+	public void setInvestmentAmount(double investmentAmount) {
+		this.investmentAmount = investmentAmount;
+	}
+	public int getInvestmentTermInMonths() {
+		return investmentTermInMonths;
+	}
+	public void setInvestmentTermInMonths(int investmentTermInMonths) {
+		this.investmentTermInMonths = investmentTermInMonths;
+	}
+	public ActionType getActionType() {
+		return actionType;
+	}
+	public void setActionType(ActionType actionType) {
+		this.actionType = actionType;
+	}
+
 }
