@@ -1,10 +1,15 @@
 package com.summerpractice.bank_product_catalogue.service;
 
 import com.summerpractice.bank_product_catalogue.model.DTO.ClientRequestDTO;
+import com.summerpractice.bank_product_catalogue.model.entity.Client;
 import com.summerpractice.bank_product_catalogue.model.entity.ClientRequest;
+import com.summerpractice.bank_product_catalogue.model.entity.ProductDetails;
+import com.summerpractice.bank_product_catalogue.model.enums.ActionType;
+import com.summerpractice.bank_product_catalogue.repository.ClientRepository;
 import com.summerpractice.bank_product_catalogue.repository.ClientRequestRepository;
+import com.summerpractice.bank_product_catalogue.repository.ProductDetailsRepository;
+
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,21 +20,35 @@ import java.util.stream.Collectors;
 public class ClientRequestService {
 
     private final ClientRequestRepository clientRequestRepository;
+    private final ClientRepository clientRepository;
+    private final ProductDetailsRepository productDetailsRepository;
     private final ModelMapper modelMapper;
 
-    @Autowired
-    public ClientRequestService(ClientRequestRepository clientRequestRepository, ModelMapper modelMapper) {
-        this.clientRequestRepository = clientRequestRepository;
-        this.modelMapper = modelMapper;
-    }
+	public ClientRequestService(ClientRequestRepository clientRequestRepository, ModelMapper modelMapper,
+			ClientRepository clientRepository, ProductDetailsRepository productDetailsRepository) {
+		this.clientRequestRepository = clientRequestRepository;
+		this.modelMapper = modelMapper;
+		this.clientRepository = clientRepository;
+		this.productDetailsRepository = productDetailsRepository;
+	}
 
     public ClientRequestDTO create(ClientRequestDTO clientRequestDTO) {
-        ClientRequest clientRequest = modelMapper.map(clientRequestDTO, ClientRequest.class);
+        Client client = clientRepository.getReferenceById(clientRequestDTO.getClientId());
+        ProductDetails productDetails = productDetailsRepository.getReferenceById(clientRequestDTO.getProductDetailsId());
+        ClientRequest clientRequest = new ClientRequest();
+        clientRequest.setActionType(clientRequestDTO.getActionType().toString());
+        clientRequest.setClient(client);
+        clientRequest.setInvestmentAmount(clientRequestDTO.getInvestmentAmount());
+        clientRequest.setInvestmentTermInMonths(clientRequestDTO.getInvestmentTermInMonths());
+        clientRequest.setLoanAmount(clientRequestDTO.getLoanAmount());
+        clientRequest.setLoanTermInMonths(clientRequestDTO.getLoanTermInMonths());
+        clientRequest.setProductDetails(productDetails);
+
         ClientRequest savedClientRequest = clientRequestRepository.save(clientRequest);
         return modelMapper.map(savedClientRequest, ClientRequestDTO.class);
     }
 
-    public List<ClientRequestDTO> getAll() {
+    public List<ClientRequestDTO> getAll(ActionType actionType, String fromDate, String toDate) {
         List<ClientRequest> clientRequests = clientRequestRepository.findAll();
         return clientRequests.stream()
                 .map(clientRequest -> modelMapper.map(clientRequest, ClientRequestDTO.class))
