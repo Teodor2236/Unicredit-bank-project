@@ -1,0 +1,200 @@
+/* Import the Nunito font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+.image-login {
+    height: 100vh;
+    background-image: url('../image/background.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.main-part {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: black; 
+    width: 300px;
+    text-align: center;
+}
+
+.main-part .logo {
+    width: 100px; 
+    margin-bottom: 15px;
+}
+
+.main-part h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Nunito', sans-serif; 
+}
+
+.form-group label {
+    font-size: 20px;
+    position: absolute;
+    top: 15px; 
+    left: 10px;
+    transition: all 0.2s;
+    padding: 0 5px;
+    pointer-events: none;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif; 
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 811px) { /* Tablet and smaller devices */
+    .main-part {
+        width: 80%;
+        padding: 15px;
+    }
+
+    .main-part .logo {
+        width: 80px; /* Adjust size as needed */
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    
+}
+
+@media (max-width: 480px) { /* Phones and smaller devices */
+    .main-part {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .main-part .logo {
+        width: 60px; /* Adjust size as needed */
+    }
+
+    .form-group label,
+    .form-group input,
+    button {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 6px;
+        font-size: 12px;
+    }
+}
+
+
+.popup input[type=text]:focus {
+       border: 3px solid #555;
+     }
+
+
+.footer .heart {
+    color: red;
+    margin-left: 5px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+    padding: 10px 0;
+    z-index: 3; /* Ensure the footer is above other content */
+}
+
+.footer .heart {
+    color: red;
+    margin-left: 5px;
+}
+
+.popup {
+    border-radius:20px;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 60px;
+    background: #fff;
+    border: 3px solid #ccc;
+    z-index: 9999;
+}
+.popup input{
+margin:10px;
+border: 1px solid black;
+padding: 10px;
+border-radius: 5px;
+width:80%;
+}
+.popup #buttonContainers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 10%;
+    padding:10px
+    }
+.popup button{
+margin: 5% auto;
+border: 2px solid;
+padding: 20px;
+border-radius:30px;
+}
+.popup .puLabel{
+font-size:10px;
+background-color:white;
+}
+.popup h1{
+text-align:center;}
+.popup p{
+text-align:center;
+margin:10px;
+font-size:12px;
+}
+.popup input[type=text]:focus {
+       border: 3px solid #555;
+     }
