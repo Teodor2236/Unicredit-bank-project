@@ -31,12 +31,12 @@ async function loadInvestmentFunds() {
              </section>
             `
       })
-      const buttonHTML =
-          `
-          <div class="butoniii">
-            <button class="vhod"><a href="../internal/employeeLogin.html">Заяви</a></button>
-          </div>
-          `
+      const buttonHTML = '';
+//          `
+//          <div class="butoniii">
+////            <button class="vhod"><a href="../internal/employeeLogin.html">Заяви</a></button>
+//          </div>
+//          `
       investmentFundsContainer.innerHTML += investmentsHTML;
       investmentFundsContainer.innerHTML += buttonHTML;
     }
