@@ -233,19 +233,23 @@ main > h1 {
 }
 .main-body-title{
     font-size: 5em;
+    text-align: center;
+
 }
 ::selection {
         background-color: rgba(240, 0, 0, 0.8);
 }
 .accordion-image {
     width: 100%;
+    margin: 5%;
+
 }
 .accordion {
 	--circle-x: 1.8rem;
 	--circle-y: 0;
 	--circle-r: 500%;
-	--circle-bg: rgba(173, 162, 162, 0.8);
-	color: #fff;
+	--circle-bg: rgb(233, 233, 233);
+	color: #960707;
 
 	background-color: var(--circle-bg);
 	max-width: 100%;
@@ -274,6 +278,7 @@ main > h1 {
 .accordion,
 .content {
 	overflow: hidden;
+	margin: 5%;
 }
 
 .accordion:target {
@@ -285,6 +290,8 @@ main > h1 {
 .wrapper {
 	padding-block: 0 1.05rem;
 	padding-inline: 1.25rem;
+	margin: 5%;
+	margin-left: -3%;
 }
 
 .content {
@@ -311,7 +318,7 @@ main :last-child,
 	padding: 1rem 1.25rem;
 	font-size:2rem;
 	font-weight: 800;
-	color: #fff;
+	color: #960707;
 	text-decoration: none;
 	display: flex;
 	flex-direction: row;
