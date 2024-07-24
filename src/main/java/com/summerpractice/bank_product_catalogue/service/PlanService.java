@@ -12,8 +12,10 @@ import java.util.stream.Collectors;
 
 @Service
 public class PlanService {
+
     private final ModelMapper modelMapper;
     private final PlanRepository planRepository;
+
     @Autowired
     public PlanService(PlanRepository planRepository, ModelMapper modelMapper) {
         this.planRepository = planRepository;
