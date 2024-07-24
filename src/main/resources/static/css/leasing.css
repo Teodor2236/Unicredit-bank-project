@@ -164,6 +164,7 @@ box-shadow:none;
 /*---------------------------------------accordion-------------------------------*/
 .main-body{
     margin: 10%;
+    margin-top: 20%;
     border-style: outline;
     padding: 20px;
     border-radius:10px;
@@ -172,216 +173,270 @@ box-shadow:none;
 
 }
 :root {
-	--size-header: 2.25rem;
-	--size-accordion-title: 1.25rem;
-	--size-accordion-content: 1rem;
-	--animation-speed: 100;
-	--slide-ease: cubic-bezier(0.86, 0, 0.07, 1);
-	--slide-duration: calc(200ms * 100 / var(--animation-speed));
-	--slide-delay: calc(100ms * 100 / var(--animation-speed));
-	--circle-duration: calc(1000ms * 100 / var(--animation-speed));
+    --size-header: 2.25rem;
+    --size-accordion-title: 1.25rem;
+    --size-accordion-content: 1rem;
+    --animation-speed: 100;
+    --slide-ease: cubic-bezier(0.86, 0, 0.07, 1);
+    --slide-duration: calc(200ms * 100 / var(--animation-speed));
+    --slide-delay: calc(100ms * 100 / var(--animation-speed));
+    --circle-duration: calc(1000ms * 100 / var(--animation-speed));
 }
 
 *,
 *::before,
 *::after {
-	position: relative;
-	left: 0;
-	top: 0;
-	box-sizing: border-box;
+    position: relative;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
 }
 
 a,
 p,
 h1 {
-	margin: 0;
+    margin: 0;
 }
 
 html {
-	height: 100%;
+    height: 100%;
+}
+
+.menu a{
+    font-size:25px;
 }
 
 body {
 
-	font-family: Nunito, Arial, Helvetica, sans-serif;
-	font-weight: 600;
-	margin: 0;
-	display: grid;
-	place-items: center;
-	min-height: 100%;
+    font-family: Nunito, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100%;
 }
 
 html,
 body {
-	scroll-behavior: smooth;
-	scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
 }
 
-.menu a{
-  font-size:25px;
-  }
 main > h1 {
-	font-size: var(--size-header);
-	margin-bottom: 1.25rem;
-	color: #fff;
+    font-size: var(--size-header);
+    margin-bottom: 1.25rem;
+    color: #fff;
 }
+.main-body-title{
+    font-size: 5em;
+    text-align: center;
 
+}
 ::selection {
-        background-color: rgba(240, 0, 0, 0.8);
+    background-color: rgba(240, 0, 0, 0.8);
 }
+.accordion-image {
+    width: 100%;
+    margin: 5%;
 
+}
 .accordion {
-	--circle-x: 1.8rem;
-	--circle-y: 0;
-	--circle-r: 500%;
-	--circle-bg: rgba(253, 0, 0, 0.8);
-	color: #fff;
+    --circle-x: 1.8rem;
+    --circle-y: 0;
+    --circle-r: 500%;
+    --circle-bg: rgb(233, 233, 233);
+    color: #960707;
 
-	background-color: var(--circle-bg);
-	max-width: 100%;
-	margin-bottom: 1rem;
-	border-radius: min(8px, 0.5rem);
+    background-color: var(--circle-bg);
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-radius: min(8px, 0.5rem);
 
-	display: grid;
-	grid-template-rows: 0fr 0fr;
-	transition-timing-function: var(--slide-ease);
-	transition-duration: 200ms, 200ms, var(--slide-duration);
-	transition-property: opacity, box-shadow, grid-template-rows;
-	transition-delay: 0ms, 0ms, var(--slide-delay);
-	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-	opacity: 0.9;
+    display: grid;
+    grid-template-rows: 0fr 0fr;
+    transition-timing-function: var(--slide-ease);
+    transition-duration: 200ms, 200ms, var(--slide-duration);
+    transition-property: opacity, box-shadow, grid-template-rows;
+    transition-delay: 0ms, 0ms, var(--slide-delay);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
 }
 
 .accordion:not(:target):hover {
-	box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
 .accordion:not(:target):active {
-	opacity: 0.6    ;
-	box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.3);
+    opacity: 0.6    ;
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.3);
 }
 
 .accordion,
 .content {
-	overflow: hidden;
+    overflow: hidden;
+    margin: 5%;
 }
 
 .accordion:target {
-	--d: 90deg;
-	grid-template-rows: 0fr 1fr;
-	transition: grid-template-rows var(--slide-ease) var(--slide-duration) var(--slide-delay);
+    --d: 90deg;
+    grid-template-rows: 0fr 1fr;
+    transition: grid-template-rows var(--slide-ease) var(--slide-duration) var(--slide-delay);
 }
 
 .wrapper {
-	padding-block: 0 1.05rem;
-	padding-inline: 1.25rem;
+    padding-block: 0 1.05rem;
+    padding-inline: 1.25rem;
+    margin: 5%;
+    margin-left: -3%;
 }
 
 .content {
-	font-size: 12pt;
-	line-height: 140%;
+    font-size: 12pt;
+    line-height: 140%;
 }
 
 .content p {
-	margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .content a {
-	color: #000;
-	font-weight: 300;
-	text-decoration: underline;
+    color: #fff;
+    font-weight: 300;
+    text-decoration: none;
 }
 
 main :last-child,
 .content :last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .title a {
-	padding: 1rem 1.25rem;
-	font-size: var(--size-accordion-title);
-	font-weight: 800;
-	color: #fff;
-	text-decoration: none;
-	display: flex;
-	flex-direction: row;
-	place-items: center;
+    padding: 1rem 1.25rem;
+    font-size:2rem;
+    font-weight: 800;
+    color: #960707;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    text-decoration: none;
 }
 
 .title a::before {
-	--chevron-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath fill='white' d='M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z'/%3E%3C/svg%3E");
-	content: "";
-	left: 0;
-	top: 0;
-	width: 0.65rem;
-	aspect-ratio: 320 / 512;
-	display: inline-block;
-	margin-right: 0.75rem;
-	transform: rotate(var(--d, 0deg));
-	transition: transform var(--slide-ease) var(--slide-duration)
-		var(--slide-delay);
-	mask-image: var(--chevron-icon);
-	mask-size: 100% 100%;
-	-webkit-mask-image: var(--chevron-icon);
-	-webkit-mask-size: 100% 100%;
-	background-color: currentColor;
+    --chevron-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 512'%3E%3C!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath fill='white' d='M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z'/%3E%3C/svg%3E");
+    content: "";
+    left: 0;
+    top: 0;
+    width: 0.65rem;
+    aspect-ratio: 320 / 512;
+    display: inline-block;
+    margin-right: 0.75rem;
+    transform: rotate(var(--d, 0deg));
+    transition: transform var(--slide-ease) var(--slide-duration)
+    var(--slide-delay);
+    mask-image: var(--chevron-icon);
+    mask-size: 100% 100%;
+    -webkit-mask-image: var(--chevron-icon);
+    -webkit-mask-size: 100% 100%;
+    background-color: currentColor;
+    text-decoration: none;
 }
 
 .accordion::before,
 .accordion::after {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: #000;
-	mix-blend-mode: difference;
-	transform-style: preserve-3d;
-	transition-timing-function: ease;
-	transition-property: opacity, clip-path, visibility;
-	pointer-events: none;
-	clip-path: circle(var(--r) at var(--circle-x) var(--circle-y));
-	border-radius: inherit;
-	z-index: 4;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    mix-blend-mode: difference;
+    transform-style: preserve-3d;
+    transition-timing-function: ease;
+    transition-property: opacity, clip-path, visibility;
+    pointer-events: none;
+    clip-path: circle(var(--r) at var(--circle-x) var(--circle-y));
+    border-radius: inherit;
+    z-index: 4;
 }
 
 .accordion::before {
-	--r: 0%;
-	transition-delay: var(--circle-duration), var(--circle-duration), 0ms;
-	transition-duration: 0ms, var(--circle-duration), 0ms;
-	opacity: 0;
+    --r: 0%;
+    transition-delay: var(--circle-duration), var(--circle-duration), 0ms;
+    transition-duration: 0ms, var(--circle-duration), 0ms;
+    opacity: 0;
 }
 
 .accordion:target::before {
-	--r: var(--circle-r);
-	transition-delay: 0ms, 0ms, 0ms;
-	transition-duration: 0ms, var(--circle-duration), 0ms;
-	opacity: 1;
+    --r: var(--circle-r);
+    transition-delay: 0ms, 0ms, 0ms;
+    transition-duration: 0ms, var(--circle-duration), 0ms;
+    opacity: 1;
 }
 
 .accordion::after {
-	--r: var(--circle-r);
-	transition-delay: 0ms, 0ms, var(--circle-duration);
-	transition-duration: 0ms, var(--circle-duration), 0ms;
-	visibility: hidden;
-	opacity: 1;
+    --r: var(--circle-r);
+    transition-delay: 0ms, 0ms, var(--circle-duration);
+    transition-duration: 0ms, var(--circle-duration), 0ms;
+    visibility: hidden;
+    opacity: 1;
 }
 
 .accordion:target:after {
-	--r: 0%;
-	transition-delay: 0ms, 0ms, 0ms;
-	transition-duration: 0ms, 0ms, 0ms;
-	visibility: visible;
-	opacity: 1;
+    --r: 0%;
+    transition-delay: 0ms, 0ms, 0ms;
+    transition-duration: 0ms, 0ms, 0ms;
+    visibility: visible;
+    opacity: 1;
 }
 
 .title a:focus-visible {
-	background-color: hsl(0, 100%, 90%);
-	outline: none;
+    background-color: hsl(0, 100%, 90%);
+    outline: none;
+    text-decoration: none;
 }
 
 .accordion:target .title a:focus-visible {
-	background-color: hsl(183, 100%, 93%);
+    background-color: hsl(183, 100%, 93%);
 }
+#request_btn>a, #request_button>a{
+    text-decoration: none;
+    color:#fff;
+}
+#override_bootstrap.nav a{
+
+    box-shadow: inset 0 0 0 0;
+    color: white;
+    padding: 0 .25rem;
+    margin: 0 -.25rem;
+    text-decoration:none;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+#override_bootstrap.menu a{
+    text-decoration:none;
+}
+#override_bootstrap.nav a:hover {
+    color: white;
+    box-shadow: inset 300px 0 0 0 #e16477;
+}
+#override_bootstrap_footer a{
+
+    box-shadow: inset 0 0 0 0;
+    color: #960707;
+    padding: 0 .25rem;
+    margin: 0 -.25rem;
+    text-decoration:none;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+#override_bootstrap_footer a:hover {
+    color: var(--backcolor);
+    box-shadow: inset 300px 0 0 0 #e16477;
+
+}
+#goHome a:hover{
+    transition:none;
+    box-shadow:none;
+}
+
 
 
 /*-------------------------------------Responsive-Part--------------------------------------------*/
