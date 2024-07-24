@@ -49,12 +49,16 @@ public class ClientRequestService {
 		return modelMapper.map(savedClientRequest, ClientRequestDTO.class);
 	}
 
-	public List<ClientRequestDTO> getAll(Long clientId, ActionType actionType, String fromDate, String toDate) {
+	public List<ClientRequestDTO> getAll(String customerNumber, ActionType actionType, String fromDate, String toDate) {
+		Client client = clientRepository.findByClientNumber(customerNumber)
+				.orElseThrow(() -> new RuntimeException("Could not find client with number: ".concat(customerNumber)));
+
 		List<ClientRequest> clientRequests;
-		if (actionType.equals(ActionType.ALL)) {
-			clientRequests = clientRequestRepository.findByClientIdOrderByCreatedDateAsc(clientId);
+
+		if (actionType != null && actionType.equals(ActionType.ALL)) {
+			clientRequests = clientRequestRepository.findByClientIdOrderByCreatedDateAsc(client.getId());
 		} else {
-			clientRequests = clientRequestRepository.findByClientIdAndActionTypeOrderByCreatedDateAsc(clientId,
+			clientRequests = clientRequestRepository.findByClientIdAndActionTypeOrderByCreatedDateAsc(client.getId(),
 					actionType.name());
 		}
 
