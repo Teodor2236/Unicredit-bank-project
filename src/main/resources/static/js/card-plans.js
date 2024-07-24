@@ -1,4 +1,5 @@
-import { get, post } from "../js/requester.js";
+import { get } from "../js/requester.js";
+import { sendClientRequest } from "../js/client-request.js";
 
 const plansContainer = document.getElementById("accordion-container");
 console.log("here", plansContainer);
@@ -39,34 +40,21 @@ async function loadPlans() {
         });
 
         plansContainer.innerHTML = plansHTML;
-
-        const buttons = document.querySelectorAll('.request-button');
-        buttons.forEach(button => {
-            button.addEventListener('click', async () => {
-                const clientId = JSON.parse(localStorage.getItem('client')).id;
-                const actionType = "REQUEST";
-                const productDetailsId = button.getAttribute('data-product-details-id');
-
-                const postData = {
-                    clientId,
-                    actionType,
-                    productDetailsId
-                };
-
-                try {
-                    console.log(postData);
-                    const response = await post('client-requests/v1.0.0/create', postData);
-                    console.log(response);
-                } catch (error) {
-                    alert(`Error: ${error}`);
-                    console.log(error)
-                }
-            });
-        });
+        setupButtons();
     } catch (e) {
         alert(`Error: ${e}`);
-        console.log(e)
+        console.log(e);
     }
+}
+
+function setupButtons() {
+    const buttons = document.querySelectorAll('.request-button');
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productDetailsId = button.getAttribute('data-product-details-id');
+            sendClientRequest(productDetailsId);
+        });
+    });
 }
 
 await loadPlans();
