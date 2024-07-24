@@ -52,6 +52,21 @@ header{
     
 }
 
+.main-body{
+    margin: 10%;
+    margin-top: 20%;
+    padding: 20px;
+    border-radius:10px;
+    width: 80%;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+.main-body p {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.main-body img {
+    width: 100%;
+}
 /*------------------------Navigation-Bar--------------------------*/
 #goHome a:hover{
 transition:none;
