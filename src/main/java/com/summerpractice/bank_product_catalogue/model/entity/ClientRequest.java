@@ -15,7 +15,7 @@ public class ClientRequest {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "client_id", nullable = false)
 	private Client client;
 
