@@ -112,6 +112,7 @@ a:hover {
     margin: 0;
     padding: 1rem;
     width:100%;
+    margin-top: auto;
 }
 
 .main-inner-footer{
@@ -250,9 +251,9 @@ main > h1 {
 	--circle-y: 0;
 	--circle-r: 500%;
 	--circle-bg: rgb(233, 233, 233);
-	color: #960707;
+	color: white;
 
-	background-color: var(--circle-bg);
+	background-image: linear-gradient(to bottom left, #41282c 40%, #960707 100%);;
 	max-width: 100%;
 	margin-bottom: 1rem;
 	border-radius: min(8px, 0.5rem);
@@ -319,7 +320,7 @@ main :last-child,
 	padding: 1rem 1.25rem;
 	font-size:2rem;
 	font-weight: 800;
-	color: #960707;
+	color: white;
 	text-decoration: none;
 	display: flex;
 	flex-direction: row;
@@ -403,9 +404,22 @@ main :last-child,
 .accordion:target .title a:focus-visible {
 	background-color: hsl(183, 100%, 93%);
 }
+.d-grid, gap-4, col-4, mx-aut{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
 #request_btn>a, #request_button>a{
     text-decoration: none;
     color:#fff;
+}
+#request-button{
+    background-color: white;
+    border-radius: 7px;
+    border: 2px solid white;
+    color: black;
+    width: max-content;
 }
 #override_bootstrap.nav a{
 

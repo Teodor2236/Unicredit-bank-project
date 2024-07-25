@@ -27,7 +27,7 @@ async function loadLeasingData(){
                                     <li>&#10003; ${leasing.description}</li>    
                                 </ul>
                                 <div class="d-grid gap-4 col-4 mx-auto">
-                                  <button type="button" class="btn btn-success request-button" data-product-details-id="${matchingProductDetail.id}" style="font-size: 15pt;">Проявявам интерес</button>
+                                  <button id="request-button" type="button" class="btn btn-success request-button" data-product-details-id="${matchingProductDetail.id}" style="font-size: 15pt;">Проявявам интерес</button>
                                  </div>
                             </div>
                         </div>

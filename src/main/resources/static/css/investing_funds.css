@@ -36,6 +36,19 @@
     margin-right: 3%;
 }
 
+.d-grid, gap-4, col-4, mx-aut{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+#request-button{
+    background-color: white;
+    border-radius: 7px;
+    border: 2px solid white;
+    color: black;
+    width: max-content;
+}
 .butoniii {
     display: flex;
     justify-content: space-around;

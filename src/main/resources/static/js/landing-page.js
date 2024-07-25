@@ -3,7 +3,7 @@ function loadClient() {
     try {
         const client = JSON.parse(localStorage.getItem('client'));
         const welcomeMessage = document.getElementById("welcome-message")
-        welcomeMessage.innerText = `Добре дошли в нашата система, ${client.names}`;
+        welcomeMessage.innerHTML = `Добре дошли,<br><b>${client.names}</b>!`;
     } catch (error) {
         console.error('Error getting client from localStorage: ', error);
     }
@@ -28,7 +28,7 @@ async function loadProducts() {
                                   <div class="card_content">
                                       <h2 class="card_title">${product.type}</h2>
                                       <p class="card_text">${product.description}</p>
-                                      <button class="btn card_btn"  id="learn-more-btn"> <a href="${product.htmlFileName}"> Научете повече тук</a></button>
+                                      <button class="btn card_btn"  id="learn-more-btn"> <a href="${product.htmlFileName}"> Научете повече</a></button>
                                   </div>
                               </div>
                           </li>

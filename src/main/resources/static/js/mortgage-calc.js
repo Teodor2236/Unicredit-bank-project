@@ -1,55 +1,8 @@
-//let menu = document.querySelector("#navbar");
-//let nav = document.querySelector(".menu");
-//
-//menu.onclick = () => {
-//  menu.classList.toggle("fa-times");
-//  nav.classList.toggle("active");
-//};
-//
-//
-//var slider = document.getElementById("myRange");
-//var output = document.getElementById("s-sum");
-//output.value = slider.value;
-//
-//slider.oninput = function() {
-//  output.value = this.value;
-//}
-//
-//var slider = document.getElementById("myRange2");
-//var output2 = document.getElementById("p-period");
-//output2.value = slider.value;
-//
-//slider.oninput = function() {
-//  output2.value = this.value;
-//}
-//
-//
-//function calc() {
-//
-//    var suma = document.getElementById("s-sum")
-//    var period = document.getElementById("p-period")
-//    var mesVnoska = document.getElementById("m-installment")
-//
-//    var mesLihva = parseFloat(2.69 / 100 / 12);
-//
-//    mesVnoska.value = ((parseFloat(mesLihva) * parseFloat(suma.value)
-//     * Math.pow((1 + mesLihva), parseFloat(period.value)))
-//      / Math.pow((1 + mesLihva), parseFloat(period.value)) - 1).toFixed(2);
-//
-//
-//}
-//
-//
-//
-//var calculate = document.getElementById("calcing");
-//
-//calculate.addEventListener('click', function()  {
-//        calc();
-//
-//});
+import {sendClientRequest} from "./client-request.js";
 
 let menu = document.querySelector("#navbar");
 let nav = document.querySelector(".menu");
+let interestedButton = document.getElementById("calcing")
 
 menu.onclick = () => {
   menu.classList.toggle("fa-times");
@@ -100,6 +53,10 @@ function calc() {
 
 calc();
 
+interestedButton.addEventListener('click', async () => {
+    const productdetails = 5;
+    await sendClientRequest(productdetails);
+})
 
 
 

@@ -17,7 +17,6 @@ async function loadMortgageDetails(){
 
     mortgageHTML +=
         `
-        <img src="${mortgage.imageUrl}" alt="">
         <p> ${mortgage.description} </p>
         `
     mortgageContainer.innerHTML += mortgageHTML;
