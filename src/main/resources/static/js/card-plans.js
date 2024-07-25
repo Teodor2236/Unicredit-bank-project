@@ -31,7 +31,7 @@ async function loadPlans() {
                             <li>&#10003; ${plan.description}</li>    
                         </ul>
                         <div class="d-grid gap-4 col-4 mx-auto">
-                            <button type="button" id="request-button" class="btn btn-success request-button" data-product-details-id="${matchingProductDetail.id}">Проявявам интерес</button>
+                            <button type="button" id="request-button" class="btn btn-success request-button" data-product-details="${matchingProductDetail.id}">Проявявам интерес</button>
                         </div>
                     </div>
                 </div>
