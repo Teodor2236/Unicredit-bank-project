@@ -42,7 +42,6 @@ async function loadPlans() {
 
         plansContainer.innerHTML += plansHTML;
         setupButtons();
-        location.href=#${plans.plan[0].type};
     } catch (e) {
         alert(`Error: ${e}`);
         console.log(e);

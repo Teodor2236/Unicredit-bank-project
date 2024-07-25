@@ -112,6 +112,7 @@ a:hover {
     margin: 0;
     padding: 1rem;
     width:100%;
+    margin-top:auto;
 }
 
 .main-inner-footer{
@@ -168,8 +169,7 @@ a:hover {
 
 /*---------------------------------------accordion-------------------------------*/
 .main-body{
-    margin: 10%;
-    margin-top: 20%;
+    margin: 20% 10%;
     border-style: outline;
     padding: 20px;
     border-radius:10px;
