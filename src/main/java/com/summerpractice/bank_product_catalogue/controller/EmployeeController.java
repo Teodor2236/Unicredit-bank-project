@@ -1,6 +1,7 @@
 package com.summerpractice.bank_product_catalogue.controller;
 
 import com.summerpractice.bank_product_catalogue.model.DTO.EmployeeDTO;
+import com.summerpractice.bank_product_catalogue.model.DTO.LoginRequest;
 import com.summerpractice.bank_product_catalogue.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -69,5 +70,10 @@ public class EmployeeController implements Controller<EmployeeDTO> {
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<EmployeeDTO> login(@RequestBody LoginRequest loginRequest) {
+        return ResponseEntity.ok(employeeService.login(loginRequest));
     }
 }

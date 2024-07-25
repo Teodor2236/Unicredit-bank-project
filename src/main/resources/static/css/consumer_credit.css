@@ -152,6 +152,12 @@ a:hover {
     margin-right: 3%;
 }
 
+.main4 #consumer-credit-image
+{
+width:100%;
+
+}
+
 .butoniii {
     display: flex;
     justify-content: space-around;
@@ -162,7 +168,11 @@ a:hover {
 
 #calcing {
     background: white;
+
 }
+#calcing a{
+color:black;
+text-decoration:none;}
 
 #calcing:hover {
     color: black;

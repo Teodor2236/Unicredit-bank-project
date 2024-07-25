@@ -153,9 +153,14 @@ a:hover {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#calcing{
+#calcing {
     background: white;
+
 }
+#calcing a{
+color:black;
+text-decoration:none;}
+
 #calcing:hover{
 color:black;
 }

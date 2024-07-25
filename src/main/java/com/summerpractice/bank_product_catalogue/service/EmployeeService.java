@@ -1,6 +1,7 @@
 package com.summerpractice.bank_product_catalogue.service;
 
 import com.summerpractice.bank_product_catalogue.model.DTO.EmployeeDTO;
+import com.summerpractice.bank_product_catalogue.model.DTO.LoginRequest;
 import com.summerpractice.bank_product_catalogue.model.entity.Employee;
 import com.summerpractice.bank_product_catalogue.repository.EmployeeRepository;
 import org.modelmapper.ModelMapper;
@@ -65,5 +66,12 @@ public class EmployeeService {
             return true;
         }
         return false;
+    }
+
+    public EmployeeDTO login(LoginRequest loginRequest) {
+        Employee employee = employeeRepository.findByEmployeeNumberAndPassword(loginRequest.getEmployeeNumber(), loginRequest.getPassword())
+                .orElseThrow(() -> new RuntimeException("Could not find employee by given number and password"));
+
+        return modelMapper.map(employee, EmployeeDTO.class);
     }
 }
