@@ -51,11 +51,24 @@ async function loadPlans() {
 async function setupButtons() {
     const buttons = document.querySelectorAll('.request-button');
     buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const productDetails = button.getAttribute('data-product-details');
+        button.addEventListener('click', async () => {
+            const productDetailsId = button.getAttribute('data-product-details');
+            const productDetails = await get(`product-details/v1.0.0/get/${productDetailsId}`) ;
+            console.log(button.getAttribute('data-product-details'));
             sendClientRequest(productDetails, 'REQUEST');
+            confirmationBox.style.display = 'block';
         });
     });
 }
+
+closeConfirmation.onclick = () => {
+    confirmationBox.style.display = 'none';
+};
+
+window.onclick = (event) => {
+    if (event.target === confirmationBox) {
+        confirmationBox.style.display = 'none';
+    }
+};
 
 await loadPlans();

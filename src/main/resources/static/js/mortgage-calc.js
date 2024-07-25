@@ -4,6 +4,8 @@ import {get} from "./requester.js";
 let menu = document.querySelector("#navbar");
 let nav = document.querySelector(".menu");
 let interestedButton = document.getElementById("calcing")
+let confirmationBox = document.getElementById("confirmationBox");
+let closeConfirmation = document.getElementById("closeConfirmation");
 
 menu.onclick = () => {
   menu.classList.toggle("fa-times");
@@ -57,8 +59,17 @@ calc();
 interestedButton.addEventListener('click', async () => {
     const productDetail = await get("product-details/v1.0.0/get/5");
     await sendClientRequest(productDetail, 'REQUEST');
+    confirmationBox.style.display = 'block';
 })
 
+closeConfirmation.onclick = () => {
+    confirmationBox.style.display = 'none';
+};
 
+window.onclick = (event) => {
+    if (event.target === confirmationBox) {
+        confirmationBox.style.display = 'none';
+    }
+};
 
 
