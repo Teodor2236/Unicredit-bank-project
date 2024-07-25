@@ -34,7 +34,7 @@
                     <!--                <label class="user-label">Търсене по клиентски номер</label>-->
                 </div>
                 <select class="form-select" aria-label="Default select example" id="actionTypeSelect">
-                    <option value="null">Избери нещо</option>
+                    <option value="" selected>Избери нещо</option>
                     <option value="ALL">Всички</option>
                     <option value="REQUEST">Заявка</option>
                     <option value="VIEW">Просто резглежда</option>
@@ -48,7 +48,6 @@
                 <table>
 
                     <thead>
-
                     <tr>
                         <th scope="col">Услуга</th>
                         <th scope="col">Клиентски номер</th>
@@ -59,7 +58,7 @@
 
                     </thead>
 
-                    <tbody>
+                    <tbody id="customerTable">
                     <tr>
                         <th scope="row">Ипотечен кредит</th>
                         <td>FF9065TK</td>
