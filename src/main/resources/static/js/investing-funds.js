@@ -4,8 +4,6 @@ import { sendClientRequest } from "../js/client-request.js";
 const investmentFundsContainer = document.getElementById("accordion-container")
 let menu = document.querySelector("#navbar");
 let nav = document.querySelector(".menu");
-let confirmationBox = document.getElementById("confirmationBox");
-let closeConfirmation = document.getElementById("closeConfirmation");
 
 menu.onclick = () => {
     menu.classList.toggle("fa-times");
@@ -58,22 +56,12 @@ async function loadInvestmentFunds() {
 function setupButtons() {
     const buttons = document.querySelectorAll('.request-button');
     buttons.forEach(button => {
-        button.addEventListener('click', async () => {
-            const productDetailsId = button.getAttribute('data-product-details');
-            const productDetails = await get(`product-details/v1.0.0/get/${productDetailsId}`) ;
-            await sendClientRequest(productDetails, 'REQUEST');
-            confirmationBox.style.display = 'block';
+        button.addEventListener('click', () => {
+            const productDetails = button.getAttribute('data-product-details');
+            sendClientRequest(productDetails, 'REQUEST');
         });
     });
 }
 
-closeConfirmation.onclick = () => {
-    confirmationBox.style.display = 'none';
-};
 
-window.onclick = (event) => {
-    if (event.target === confirmationBox) {
-        confirmationBox.style.display = 'none';
-    }
-};
 await loadInvestmentFunds()
