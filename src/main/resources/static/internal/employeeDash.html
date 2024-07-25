@@ -1,122 +1,81 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="employeeDash.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="employeeDash.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Екран за служители</title>
-</head>
-<body >
-
-<!--    <div class="header">-->
-<!--        <img src="../image/logo2.png" alt="">-->
-<!--    </div>-->
-    <div class="image-login">
-        <div class="header">
-            <img src="../image/logo2.png" alt="" width="150" height="150">
-            <p class="welcome">Добре дошли, $Worker!</p>
-        </div>
-<!--        <header class="header">-->
-<!--            &lt;!&ndash;        <img src="../image/Contact.png" alt="" width="25%" height="25%">&ndash;&gt;-->
-<!--        </header>-->
-<!--        <p class="welcome">Добре дошли, $Worker!</p>-->
-
-        <main class="main">
-
-            <div class="sectionOne">
-                <div class="input-group">
-                    <input id="customerNumberInput" placeholder="Клиентски номер" required="" type="text" name="text" class="input">
-                    <!--                <label class="user-label">Търсене по клиентски номер</label>-->
+        <title>Екран за служители</title>
+    </head>
+    <body>
+        <div class="image-login">
+            <div class="header">
+                <img src="../image/logo2.png" alt="" width="150" height="150">
+                <p class="welcome">Добре дошли, $Worker!</p>
+            </div>
+            <main class="main">
+                <div class="search-bar">
+                    <div class="customer-number-input mr-5">
+                        <div class="input-group flex-nowrap">
+                            <input type="text" class="form-control" placeholder="Клиентски номер" aria-label="clientNumber" aria-describedby="addon-wrapping" id="customerNumberInput">
+                        </div>
+                    </div>
+                    <div class="select-action-type">
+                        <select class="form-select" aria-label="Default select example" id="actionTypeSelect">
+                            <option value="" selected disabled>Тип на заявка</option>
+                            <option value="ALL">Всички</option>
+                            <option value="REQUEST">Заявка</option>
+                            <option value="VIEW">Просто резглежда</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-danger" id="searchByCustomerNumber">Търси</button>
                 </div>
-                <select class="form-select" aria-label="Default select example" id="actionTypeSelect">
-                    <option value="" selected>Избери нещо</option>
-                    <option value="ALL">Всички</option>
-                    <option value="REQUEST">Заявка</option>
-                    <option value="VIEW">Просто резглежда</option>
-                </select>
 
-                <button class="vhod2" id="searchByCustomerNumber">Търси</button>
-            </div>
+<!--                <div class="sectionOne">-->
+<!--                    <div class="input-group">-->
+<!--                        <input id="customerNumberInput" placeholder="Клиентски номер" required="" type="text" name="text"-->
+<!--                               class="input">-->
+<!--                    </div>-->
+<!--                    <select class="form-select" aria-label="Default select example" id="actionTypeSelect">-->
+<!--                        <option value="" selected>Избери нещо</option>-->
+<!--                        <option value="ALL">Всички</option>-->
+<!--                        <option value="REQUEST">Заявка</option>-->
+<!--                        <option value="VIEW">Просто резглежда</option>-->
+<!--                    </select>-->
 
+<!--                    <button class="vhod2" id="searchByCustomerNumber">Търси</button>-->
+<!--                </div>-->
 
-            <div class="tableOneOne">
-                <table>
+                <div class="tableOneOne">
+                    <div style="overflow:scroll; height:40vh; scrollbar-width: none;">
+                        <table style="height: calc( 40vh - 200px ); overflow-y: scroll;">
+                            <thead style="overflow-y: auto; position: sticky; top: 0;">
+                                <tr>
+                                    <th scope="col" style="position: sticky;  top: 0;">Услуга</th>
+                                    <th scope="col" style="position: sticky;  top: 0;">Клиентски номер</th>
+                                    <th scope="col" style="position: sticky;  top: 0;">Име на клиент</th>
+                                    <th scope="col" style="position: sticky;  top: 0;">Размер на кредита</th>
+                                    <th scope="col" style="position: sticky;  top: 0;">Срок на кредита</th>
+                                    <th scope="col" style="position: sticky;  top: 0;">Размер на инвестиция</th>
+                                    <th scope="col" style="position: sticky;  top: 0;">Срок на инвестиция</th>
+                                    <th scope="col" style="position: sticky;  top: 0;">Срок на инвестиция</th>
+                                    <th scope="col" style="position: sticky;  top: 0;">Валута</th>
+                                    <th scope="col" style="position: sticky;  top: 0;">Тип на заяка</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customerTable">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
 
-                    <thead>
-                    <tr>
-                        <th scope="col">Услуга</th>
-                        <th scope="col">Клиентски номер</th>
-                        <th scope="col">Име на клиент</th>
-                        <th scope="col">Брой посещения на клиент</th>
-                        <th scope="col">Брой заявки на клиент</th>
-                    </tr>
-
-                    </thead>
-
-                    <tbody id="customerTable">
-                    <tr>
-                        <th scope="row">Ипотечен кредит</th>
-                        <td>FF9065TK</td>
-                        <td>Иван Иванов</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
-
-            </div>
-        </main>
-
-    </div>
-
-
-    <script type="module" src="../js/employeeDash.js"></script>
-</body>
+        <script type="module" src="../js/employeeDash.js"></script>
+    </body>
 </html>
