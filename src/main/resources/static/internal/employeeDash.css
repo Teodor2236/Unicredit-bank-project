@@ -284,3 +284,7 @@ header{
 .welcome-message {
     color: white;
 }
+#searchByCustomerNumber{
+    background-color:  #960707;
+    color:white;
+}
