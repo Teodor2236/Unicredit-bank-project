@@ -13,11 +13,8 @@ export async function sendClientRequest(productDetails, actionType) {
     };
 
     try {
-        console.log(postData);
         const response = await post('client-requests/v1.0.0/create', postData);
-        console.log(response);
     } catch (error) {
-        alert(`Error: ${error}`);
-        console.log(error);
+        console.error(error);
     }
 }

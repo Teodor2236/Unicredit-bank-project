@@ -31,7 +31,7 @@ async function loadPlans() {
                             <li>&#10003; ${plan.description}</li>    
                         </ul>
                         <div class="d-grid gap-4 col-4 mx-auto">
-                            <button type="button" id="request-button" class="btn btn-success request-button" data-product-details="${matchingProductDetail}" style="font-size: 15pt;">Проявявам интерес</button>
+                            <button type="button" id="request-button" class="btn btn-success request-button" data-product-details="${matchingProductDetail.id}" style="font-size: 15pt;">Проявявам интерес</button>
                         </div>
                     </div>
                 </div>
@@ -51,11 +51,24 @@ async function loadPlans() {
 async function setupButtons() {
     const buttons = document.querySelectorAll('.request-button');
     buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const productDetails = button.getAttribute('data-product-details');
+        button.addEventListener('click', async () => {
+            const productDetailsId = button.getAttribute('data-product-details');
+            const productDetails = await get(`product-details/v1.0.0/get/${productDetailsId}`) ;
+            console.log(button.getAttribute('data-product-details'));
             sendClientRequest(productDetails, 'REQUEST');
+            confirmationBox.style.display = 'block';
         });
     });
 }
+
+closeConfirmation.onclick = () => {
+    confirmationBox.style.display = 'none';
+};
+
+window.onclick = (event) => {
+    if (event.target === confirmationBox) {
+        confirmationBox.style.display = 'none';
+    }
+};
 
 await loadPlans();

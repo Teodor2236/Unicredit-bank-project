@@ -2,6 +2,8 @@ import {get} from "../js/requester.js";
 import { sendClientRequest } from "../js/client-request.js";
 
 const leasingContainer = document.getElementById('leasing-container')
+let confirmationBox = document.getElementById("confirmationBox");
+let closeConfirmation = document.getElementById("closeConfirmation");
 
 async function loadLeasingData(){
     try {
@@ -45,11 +47,22 @@ async function loadLeasingData(){
 function setupButtons() {
     const buttons = document.querySelectorAll('.request-button');
     buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const productDetails = button.getAttribute('data-product-details');
-            sendClientRequest(productDetails, 'REQUEST');
+        button.addEventListener('click', async () => {
+            const productDetailsId = button.getAttribute('data-product-details');
+            const productDetails = await get(`product-details/v1.0.0/get/${productDetailsId}`) ;
+            await sendClientRequest(productDetails, 'REQUEST');
+            confirmationBox.style.display = 'block';
+
         });
     });
 }
+closeConfirmation.onclick = () => {
+    confirmationBox.style.display = 'none';
+};
 
+window.onclick = (event) => {
+    if (event.target === confirmationBox) {
+        confirmationBox.style.display = 'none';
+    }
+};
 await loadLeasingData()
