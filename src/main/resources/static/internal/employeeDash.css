@@ -76,7 +76,7 @@ body{
 
    .input {
     width:100%;
-    border: solid 1.5px aqua;
+    border: solid 1.5px #960707;
     border-radius: 1rem;
     background: none;
     padding: 1rem;
@@ -244,6 +244,9 @@ a{
 .customer-number-input {
     width: 15%;
     margin-right: 0.5%;
+}
+#customerNumberInput{
+    border: solid 2px #960707;
 }
 
 .select-action-type {
