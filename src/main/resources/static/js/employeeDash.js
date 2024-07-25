@@ -34,20 +34,32 @@ searchButton.addEventListener('click', async function() {
         customerRows += `
             <tr>
                 <th scope="row">${request.productDetails.product.type}</th>
-                <td>${request.client.names}</td>
-                <td>${request.client.clientNumber}</td>
-                <td>${request.loanAmount}</td>
-                <td>${request.loanTermInMonths}</td>
-                <td>${request.loanTerm}</td>
-                <td>${request.investmentAmount}</td>
-                <td>${request.investmentTermInMonths}</td>
-                <td>${request.currency}</td>
-                <td>${request.actionType}</td>
+                <td>${valueIdentifier(request.client.names)}</td>
+                <td>${valueIdentifier(request.client.clientNumber)}</td>
+                <td>${valueIdentifier(request.loanAmount)}</td>
+                <td>${valueIdentifier(request.loanTermInMonths)}</td>
+                <td>${valueIdentifier(request.loanTerm)}</td>
+                <td>${valueIdentifier(request.investmentAmount)}</td>
+                <td>${valueIdentifier(request.investmentTermInMonths)}</td>
+                <td>${valueIdentifier(request.currency)}</td>
+                <td>${valueIdentifier(request.actionType)}</td>
             </tr>
         `
+
+        request.client === "undefined";
 
         customerTable.innerHTML = customerRows;
     })
 });
+
+function valueIdentifier(value) {
+    if (value === undefined) {
+        return "-";
+    } else if (value === 0) {
+        return "-";
+    } else {
+        return value;
+    }
+}
 
 
