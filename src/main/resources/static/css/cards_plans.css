@@ -425,7 +425,7 @@ main :last-child,
       flex: 0 0 auto;
       width:max-content;
       margin-left:5%;
-
+      outline: 3px outset black;
 }
 #override_bootstrap.nav a{
 
