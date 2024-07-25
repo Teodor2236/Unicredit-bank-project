@@ -41,19 +41,19 @@ async function loadPlans() {
         });
 
         plansContainer.innerHTML += plansHTML;
-        setupButtons();
+        await setupButtons();
     } catch (e) {
         alert(`Error: ${e}`);
         console.log(e);
     }
 }
 
-function setupButtons() {
+async function setupButtons() {
     const buttons = document.querySelectorAll('.request-button');
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            const productDetailsId = button.getAttribute('data-product-details-id');
-            sendClientRequest(productDetailsId);
+            const productDetails = button.getAttribute('data-product-details');
+            sendClientRequest(productDetails, 'REQUEST');
         });
     });
 }
