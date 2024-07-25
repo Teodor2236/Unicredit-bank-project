@@ -189,7 +189,7 @@ main {
 
 .info {
     width: 30%;
-    border: solid 1.5px black;
+    border: solid 1.5px #960707;
     border-radius: 1rem;
     background: none;
     padding: 1rem;
