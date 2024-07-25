@@ -1,4 +1,5 @@
 import {sendClientRequest} from "./client-request.js";
+import {get} from "./requester.js";
 
 let menu = document.querySelector("#navbar");
 let nav = document.querySelector(".menu");
@@ -54,8 +55,8 @@ function calc() {
 calc();
 
 interestedButton.addEventListener('click', async () => {
-    const productdetails = 5;
-    await sendClientRequest(productdetails);
+    const productDetail = await get("product-details/v1.0.0/get/5");
+    await sendClientRequest(productDetail, 'REQUEST');
 })
 
 

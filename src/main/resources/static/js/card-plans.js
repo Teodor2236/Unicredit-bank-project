@@ -31,7 +31,7 @@ async function loadPlans() {
                             <li>&#10003; ${plan.description}</li>    
                         </ul>
                         <div class="d-grid gap-4 col-4 mx-auto">
-                            <button type="button" id="request-button" class="btn btn-success request-button" data-product-details-id="${matchingProductDetail.id}" style="font-size: 15pt;">Проявявам интерес</button>
+                            <button type="button" id="request-button" class="btn btn-success request-button" data-product-details="${matchingProductDetail}" style="font-size: 15pt;">Проявявам интерес</button>
                         </div>
                     </div>
                 </div>
@@ -41,19 +41,19 @@ async function loadPlans() {
         });
 
         plansContainer.innerHTML += plansHTML;
-        setupButtons();
+        await setupButtons();
     } catch (e) {
         alert(`Error: ${e}`);
         console.log(e);
     }
 }
 
-function setupButtons() {
+async function setupButtons() {
     const buttons = document.querySelectorAll('.request-button');
     buttons.forEach(button => {
         button.addEventListener('click', () => {
-            const productDetailsId = button.getAttribute('data-product-details-id');
-            sendClientRequest(productDetailsId);
+            const productDetails = button.getAttribute('data-product-details');
+            sendClientRequest(productDetails, 'REQUEST');
         });
     });
 }
