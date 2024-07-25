@@ -38,11 +38,11 @@ searchButton.addEventListener('click', async function() {
                 <td>${valueIdentifier(request.client.clientNumber)}</td>
                 <td>${valueIdentifier(request.loanAmount)}</td>
                 <td>${valueIdentifier(request.loanTermInMonths)}</td>
-                <td>${valueIdentifier(request.loanTerm)}</td>
                 <td>${valueIdentifier(request.investmentAmount)}</td>
                 <td>${valueIdentifier(request.investmentTermInMonths)}</td>
                 <td>${valueIdentifier(request.currency)}</td>
                 <td>${valueIdentifier(request.actionType)}</td>
+                <td>${valueIdentifier(request.createDate)}</td>
             </tr>
         `
 
