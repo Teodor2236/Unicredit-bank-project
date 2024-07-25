@@ -14,6 +14,7 @@ async function loadProducts() {
     try {
         const response = await fetch('http://localhost:8080/products/v1.0.0/get');
         const products = await response.json();
+        console.log(products);
 
         const cardsContainer = document.getElementById('cards-container')
 
@@ -53,9 +54,13 @@ async function handleLearnMoreClick(productType, products) {
     try {
         const productDetailsResponse = await fetch('http://localhost:8080/product-details/v1.0.0/get');
         const productDetails = await productDetailsResponse.json();
+        console.log("product type"+ productType);
 
+        console.log("product details:");
+        console.log(productDetails);
         const matchedProductDetail = productDetails.find(detail => detail.product.type === productType);
         const product = products.find(p => p.type === productType);
+        console.log("matched product detail id: "+matchedProductDetail.id);
         if (matchedProductDetail) {
             await sendClientRequest(matchedProductDetail, 'VIEW');
             window.location.href = product.htmlFileName;
