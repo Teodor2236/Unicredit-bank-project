@@ -40,9 +40,10 @@ searchButton.addEventListener('click', async function() {
                 <td>${valueIdentifier(request.loanTermInMonths)}</td>
                 <td>${valueIdentifier(request.investmentAmount)}</td>
                 <td>${valueIdentifier(request.investmentTermInMonths)}</td>
-                <td>${valueIdentifier(request.currency)}</td>
+                <td>${request.productDetails.planType === null ? "-" : valueIdentifier(request.productDetails.planType.type)}</td>
+                <td>${valueIdentifier(request.productDetails.currency)}</td>
                 <td>${valueIdentifier(request.actionType)}</td>
-                <td>${valueIdentifier(request.createDate)}</td>
+                <td>${formatDateTime(valueIdentifier(request.createdDate))}</td>
             </tr>
         `
 
@@ -55,11 +56,18 @@ searchButton.addEventListener('click', async function() {
 function valueIdentifier(value) {
     if (value === undefined) {
         return "-";
+    } else if (value === null) {
+      return "-";
     } else if (value === 0) {
         return "-";
     } else {
         return value;
     }
+}
+
+function formatDateTime(value) {
+    let dateTime = value.replace("T", " ");
+    return dateTime.substring(2, 19);
 }
 
 
