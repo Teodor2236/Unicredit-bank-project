@@ -2,8 +2,6 @@ package com.summerpractice.bank_product_catalogue.model.DTO;
 
 import java.time.LocalDateTime;
 
-import com.summerpractice.bank_product_catalogue.model.entity.Client;
-import com.summerpractice.bank_product_catalogue.model.entity.ProductDetails;
 import com.summerpractice.bank_product_catalogue.model.enums.ActionType;
 
 import lombok.*;

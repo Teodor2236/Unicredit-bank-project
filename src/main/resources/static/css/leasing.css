@@ -47,7 +47,7 @@ header{
     justify-content: space-between;
     width: 100%;
     background-image: linear-gradient(130deg, white 22%, var(--main-color) -50%);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
     z-index: 1000;
     
 }
@@ -70,7 +70,6 @@ header .logo h1 {
 }
 
 nav a{
-    font-size: 1.5rem;
     padding: 1rem;
     margin-left: 1.5rem;
     color: white;
@@ -110,7 +109,7 @@ a:hover {
 /* -------------------Footer---------------- */
 .main-footer{
   background: #ececec;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   padding: 1rem;
   width:100%;
   margin-top:auto;
@@ -329,7 +328,6 @@ main :last-child,
     display: flex;
     flex-direction: row;
     place-items: center;
-    text-decoration: none;
 }
 
 .title a::before {
