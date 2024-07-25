@@ -55,7 +55,7 @@ header {
 .main-body {
     border-radius: 10px;
     width: 80%;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 2px #960707;
     padding: 5%;
     background-image: linear-gradient(to bottom left, #41282c 40%, #960707 100%);
 }
@@ -339,6 +339,7 @@ a {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 1rem;
     width: 100%;
+    margin-top:auto;
 }
 
 .main-inner-footer {
@@ -409,8 +410,9 @@ a {
 
 @media (max-width: 811px) {
     header {
-        background-image: linear-gradient(130deg, white 40%, var(--main-color) -50%);
-    }
+    background-image: linear-gradient(130deg, white 67%, var(--main-color) -50%);
+    display: flex;
+    justify-content: space-evenly;    }
 
     .card_text {
         font-size: 18px;
