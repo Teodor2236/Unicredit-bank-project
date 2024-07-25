@@ -181,6 +181,13 @@ box-shadow:none;
     box-shadow: 0 0 0 2px #960707;
 
 }
+
+.main-body-title{
+    font-size: 3em;
+    text-align: center;
+
+}
+
 :root {
     --size-header: 2.25rem;
     --size-accordion-title: 1.25rem;
@@ -496,7 +503,11 @@ margin-bottom:10%;}
   .card_text {
       font-size: 18px;
   }
+    .main-body-title{
+    font-size: 3em;
+    text-align: center;
 
+}
   html{
     font-size: 50%;
   }
