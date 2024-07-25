@@ -13,6 +13,5 @@ public class EmployeeDTO {
     private String email;
     private String EGN;
     private String employeeNumber;
-    private String password;
     private Role role;
 }

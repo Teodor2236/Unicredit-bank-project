@@ -264,6 +264,7 @@ header .logo h1 {
     margin-left: 20px;
     font-family: cursive;
     color: rgb(20, 18, 18);
+    font-size: 1.5em;
 }
 
 header{
@@ -275,7 +276,11 @@ header{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-image: linear-gradient(130deg, white 22%, var(--main-color) -50%);
+    background-image: linear-gradient(130deg, white 30%, #960707 -50%);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     z-index: 1000;
+}
+
+.welcome-message {
+    color: white;
 }
