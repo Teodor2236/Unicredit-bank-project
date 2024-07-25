@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="employeeDash.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
 
     <title>Екран за служители</title>
 </head>
@@ -16,103 +16,127 @@
 <!--    <div class="header">-->
 <!--        <img src="../image/logo2.png" alt="">-->
 <!--    </div>-->
-    <div class="image-login">
-        <div class="header">
-            <img src="../image/logo2.png" alt="" width="150" height="150">
-            <p class="welcome">Добре дошли, $Worker!</p>
-        </div>
+<!--    <div class="image-login">-->
+
+<!--            <img src="../image/logo2.png" alt="" width="150" height="150">-->
+
+
 <!--        <header class="header">-->
 <!--            &lt;!&ndash;        <img src="../image/Contact.png" alt="" width="25%" height="25%">&ndash;&gt;-->
 <!--        </header>-->
 <!--        <p class="welcome">Добре дошли, $Worker!</p>-->
 
-        <main class="main">
+<header class="header">
+    <div class="logo"><a id="goHome" href="../internal/employeeDash.html" style="transition:none; box-shadow:none;"><img
+            src="../image/logo.png" alt="" width="100px" height="100px"></a>
+<!--        <h1>Bank menu</h1>-->
+    </div>
 
-            <div class="sectionOne">
-                <div class="input-group">
-                    <input id="customerNumberInput" placeholder="Клиентски номер" required="" type="text" name="text" class="input">
-                    <!--                <label class="user-label">Търсене по клиентски номер</label>-->
+    <p class="welcome">Добре дошли, $Worker!</p>
+
+<!--    <nav class="menu" id="override_bootstrap">-->
+<!--        <a href="#">Планове</a>-->
+<!--        <a href="consumer-credit.html">Потребителски кредит</a>-->
+<!--        <a href="mortgage.html">Ипотечен кредит</a>-->
+<!--        <a href="investing-funds.html">Инвестиционни фондове</a>-->
+<!--        <a href="leasing-page.html">Лизинг</a>-->
+<!--        <a href="deposit.html">Депозити</a>-->
+<!--    </nav>-->
+
+    <div class="navbar-icons">
+        <div id="navbar" class="fas fa-bars"></div>
+    </div>
+
+</header>
+        <div class="main">
+
+                <div class="sectionOne">
+                    <div class="input-group">
+                        <input id="customerNumberInput" placeholder="Клиентски номер" required="" type="text" name="text" class="input">
+                        <!--                <label class="user-label">Търсене по клиентски номер</label>-->
+                    </div>
+                    <select class="form-select" aria-label="Default select example" id="actionTypeSelect">
+                        <option value="" selected>Избери нещо</option>
+                        <option value="ALL">Всички</option>
+                        <option value="REQUEST">Заявка</option>
+                        <option value="VIEW">Просто резглежда</option>
+                    </select>
+
+                    <button class="vhod2" id="searchByCustomerNumber">Търси</button>
                 </div>
-                <select class="form-select" aria-label="Default select example" id="actionTypeSelect">
-                    <option value="" selected>Избери нещо</option>
-                    <option value="ALL">Всички</option>
-                    <option value="REQUEST">Заявка</option>
-                    <option value="VIEW">Просто резглежда</option>
-                </select>
-
-                <button class="vhod2" id="searchByCustomerNumber">Търси</button>
-            </div>
 
 
-            <div class="tableOneOne">
-                <table>
+                <div class="tableOneOne">
+                    <table>
 
-                    <thead>
-                    <tr>
-                        <th scope="col">Услуга</th>
-                        <th scope="col">Клиентски номер</th>
-                        <th scope="col">Име на клиент</th>
-                        <th scope="col">Брой посещения на клиент</th>
-                        <th scope="col">Брой заявки на клиент</th>
-                    </tr>
+                        <thead>
+                        <tr>
+                            <th scope="col">Услуга</th>
+                            <th scope="col">Клиентски номер</th>
+                            <th scope="col">Име на клиент</th>
+                            <th scope="col">Брой посещения на клиент</th>
+                            <th scope="col">Брой заявки на клиент</th>
+                        </tr>
 
-                    </thead>
+                        </thead>
 
-                    <tbody id="customerTable">
-                    <tr>
-                        <th scope="row">Ипотечен кредит</th>
-                        <td>FF9065TK</td>
-                        <td>Иван Иванов</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                </table>
+                        <tbody id="customerTable">
+                        <tr>
+                            <th scope="row">Ипотечен кредит</th>
+                            <td>FF9065TK</td>
+                            <td>Иван Иванов</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-            </div>
-        </main>
+                </div>
+
+
+        </div>
 
     </div>
 
