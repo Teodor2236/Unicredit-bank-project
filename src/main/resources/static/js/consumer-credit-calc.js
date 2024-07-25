@@ -1,9 +1,11 @@
+import {sendClientRequest} from "../js/client-request.js";
+
 let menu = document.querySelector("#navbar");
 let nav = document.querySelector(".menu");
-
+let interestedButton = document.getElementById("calcing")
 menu.onclick = () => {
-  menu.classList.toggle("fa-times");
-  nav.classList.toggle("active");
+    menu.classList.toggle("fa-times");
+    nav.classList.toggle("active");
 };
 
 
@@ -11,28 +13,28 @@ var sumSlider = document.getElementById("myRange");
 var sumInput = document.getElementById("s-sum");
 sumInput.value = sumSlider.value;
 
-sumSlider.oninput = function() {
-  sumInput.value = this.value;
-  calc();
+sumSlider.oninput = function () {
+    sumInput.value = this.value;
+    calc();
 }
 
-sumInput.oninput = function() {
-  sumSlider.value = this.value;
-  calc();
+sumInput.oninput = function () {
+    sumSlider.value = this.value;
+    calc();
 }
 
 var periodSlider = document.getElementById("myRange2");
 var periodInput = document.getElementById("p-period");
 periodInput.value = periodSlider.value;
 
-periodSlider.oninput = function() {
-  periodInput.value = this.value;
-  calc();
+periodSlider.oninput = function () {
+    periodInput.value = this.value;
+    calc();
 }
 
-periodInput.oninput = function() {
-  periodSlider.value = this.value;
-  calc();
+periodInput.oninput = function () {
+    periodSlider.value = this.value;
+    calc();
 }
 
 
@@ -44,10 +46,11 @@ function calc() {
     var mesLihva = parseFloat(2.69 / 100 / 12);
 
     mesVnoska.value = ((mesLihva * suma * Math.pow((1 + mesLihva), period))
-    / (Math.pow((1 + mesLihva), period) - 1)).toFixed(2);
+        / (Math.pow((1 + mesLihva), period) - 1)).toFixed(2);
 }
 
-
 calc();
-
-
+interestedButton.addEventListener('click', async () => {
+    const productdetails = 4;
+    await sendClientRequest(productdetails);
+})

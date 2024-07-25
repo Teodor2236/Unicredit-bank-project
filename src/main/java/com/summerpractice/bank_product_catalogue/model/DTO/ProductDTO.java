@@ -16,5 +16,5 @@ public class ProductDTO {
     private String type;
     private String imageUrl;
     private String description;
-
+    private String htmlFileName;
 }

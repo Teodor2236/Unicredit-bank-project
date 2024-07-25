@@ -31,7 +31,7 @@ async function loadPlans() {
                             <li>&#10003; ${plan.description}</li>    
                         </ul>
                         <div class="d-grid gap-4 col-4 mx-auto">
-                            <button type="button" class="btn btn-success request-button" data-product-details-id="${matchingProductDetail.id}" style="font-size: 15pt;">Проявявам интерес</button>
+                            <button type="button" id="request-button" class="btn btn-success request-button" data-product-details-id="${matchingProductDetail.id}" style="font-size: 15pt;">Проявявам интерес</button>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,6 @@ async function loadPlans() {
 
         plansContainer.innerHTML += plansHTML;
         setupButtons();
-        location.href=#${plans.plan[0].type};
     } catch (e) {
         alert(`Error: ${e}`);
         console.log(e);

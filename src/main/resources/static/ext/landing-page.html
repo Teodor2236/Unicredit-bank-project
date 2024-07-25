@@ -2,171 +2,69 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bank</title>
-  <link rel="stylesheet" href="../css/landing-page.css">
-  <script src="https://kit.fontawesome.com/c1df782baf.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <link rel="stylesheet" href="../css/landing-page.css">
+    <script src="https://kit.fontawesome.com/c1df782baf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Банково меню</title>
+
 </head>
 
 <body class="start-menu">
 
-  <header>
+<header>
     <div>
-      <div class="logo"><img src="../image/logo.png" alt="">
-        <h1>Bank menu</h1>
-      </div>
+        <div class="logo"><img src="../image/logo.png" alt="">
+            <h1>Bank menu</h1>
+        </div>
     </div>
-   
+
 
     <nav class="menu">
-      <a href="card-plans.html">Планове</a>
-      <a href="consumer-credit.html">Потребителски кредит</a>
-      <a href="mortgage.html">Ипотечен кредит</a>
-      <a href="investing-funds.html">Инвестиционни фондове</a>
-      <a href="leasing-page.html">Лизинг</a>
-      <a href="deposit.html">Депозити</a>
+        <a href="card-plans.html">Планове</a>
+        <a href="consumer-credit.html">Потребителски кредит</a>
+        <a href="mortgage.html">Ипотечен кредит</a>
+        <a href="investing-funds.html">Инвестиционни фондове</a>
+        <a href="leasing-page.html">Лизинг</a>
+        <a href="deposit.html">Депозити</a>
     </nav>
 
     <div class="navbar-icons">
-      <div id="navbar" class="fas fa-bars"></div>
+        <div id="navbar" class="fas fa-bars"></div>
     </div>
-  </header>
+</header>
 
-  <div class="content">
+<div class="content">
     <div class="intro">
-      <h1 id="welcome-message">Добре дошли в нашата система</h1>
-      <h1>Изберете си услуга</h1>
+        <h1 id="welcome-message">Добре дошли, </h1>
     </div>
     <div class="main-container">
-      <div class="main">
+        <div class="main">
 
-      <ul id="cards-container" class="cards">
-          <!-- Cards will be dynamically inserted here -->
-      </ul>
-  
-      <script>
-          async function loadProducts() {
-              try {
-                  const response = await fetch('http://localhost:8080/products/v1.0.0/get');
-                  const products = await response.json();
-                  console.log(products);
-  
-                  const cardsContainer = document.getElementById('cards-container')
-
-                  let cardsHTML = '';
-                  products.forEach(product => {
-                      cardsHTML += `
-                          <li class="cards_item">
-                              <div class="card">
-                                  <div class="card_image">
-                                      <img src="${product.imageUrl}" alt="${product.imageUrl}">
-                                  </div>
-                                  <div class="card_content">
-                                      <h2 class="card_title">${product.type}</h2>
-                                      <p class="card_text">${product.description}</p>
-                                      <button class="btn card_btn">Научете повече тук</button>
-                                  </div>
-                              </div>
-                          </li>
-                      `;
-                  });
-
-                  cardsContainer.innerHTML = cardsHTML;
-              } catch (error) {
-                  console.error('Error:', error);
-              }
-          }
-          window.onload = loadProducts;
-      </script>
+            <ul id="cards-container" class="cards">
+                <!-- Cards will be dynamically inserted here -->
+            </ul>
 
 
-        <!-- <ul id="cards-template" class="cards">
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="../image/depozit.jpg"></div>
-              <div class="card_content">
-                <h2 id="card-name" class="card_title">Депозити</h2>
-                <p class="card_text">Съхранете паричните си средства и спечелете добра възвръщаемост.</p>
-                <button class="btn card_btn">Научете повече тук</button>
-              </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="../image/potrebitelski.jpg"></div>
-              <div class="card_content">
-                <h2 class="card_title">Потребителски кредит</h2>
-                <p class="card_text">УниКредит Булбанк предлага кредити за широка гама клиентски потребности.</p>
-                <button class="btn card_btn">Научете повече тук</button>
-              </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="../image/ipotechen.jpg"></div>
-              <div class="card_content">
-                <h2 class="card_title">Ипотечни кредити</h2>
-                <p class="card_text">Желаете да закупите апартамент или къща? Искате да ремонтирате вашия имот? Ние
-                  предлагаме пълна гама от ипотечни кредити за всяка клиентска потребност.</p>
-                <button class="btn card_btn">Научете повече тук</button>
-              </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="../image/fondove.jpg"></div>
-              <div class="card_content">
-                <h2 class="card_title">Инвестиционни фондове</h2>
-                <p class="card_text">Управлявайте и инвестирайте парите си чрез уникална и нарастваща гама от активно
-                  управлявани инвестиционни продукти.</p>
-                <button class="btn card_btn">Научете повече тук</button>
-              </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="../image/planove.jpg"></div>
-              <div class="card_content">
-                <h2 class="card_title">Карти</h2>
-                <p class="card_text">Кредитните и дебитните карти на УниКредит Булбанк ви дават възможност да
-                  разполагате със средствата си по всяко време на денонощието във всяка точка на света.</p>
-                <button class="btn card_btn">Научете повече тук</button>
-              </div>
-            </div>
-          </li>
-          <li class="cards_item">
-            <div class="card">
-              <div class="card_image"><img src="../image/lizing.jpg"></div>
-              <div class="card_content">
-                <h2 class="card_title">Лизинг</h2>
-                <p class="card_text">Лизингът е удобен начин за финансиране на активи, потребни за вас или вашия бизнес.
-                </p>
-                <button class="btn card_btn">Научете повече тук</button>
-              </div>
-            </div>
-          </li>
-        </ul> -->
-
-
-      </div>
+        </div>
     </div>
     <footer class="main-footer">
-      <div class="footer-second-part">
-        <p>2024 © UnicreditBulbank</p>
-        <img src="../image/logo.png" alt="">
-      </div>
-      <div class="sources">
-        <a href="https://www.facebook.com/unicreditbulbank/" class="fa fa-facebook"></a>
-        <a href="https://www.instagram.com/unicredit_eu/?hl=bg" class="fa fa-instagram"></a>
-        <a href="https://x.com/unicreditbg?lang=bg" class="fa fa-twitter"></a>
-      </div>
+        <div class="footer-second-part">
+            <p>2024 © UnicreditBulbank</p>
+            <img src="../image/logo.png" alt="">
+        </div>
+        <div class="sources">
+            <a href="https://www.facebook.com/unicreditbulbank/" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/unicredit_eu/?hl=bg" class="fa fa-instagram"></a>
+            <a href="https://x.com/unicreditbg?lang=bg" class="fa fa-twitter"></a>
+        </div>
     </footer>
     <script src="../js/script.js"></script>
     <script type="module" src="../js/landing-page.js"></script>
     <script type="module" src="../js/requester.js"></script>
-  </div>
+</div>
 </body>
 
 </html>

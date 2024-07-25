@@ -33,9 +33,9 @@ public class ClientRequestService {
 	}
 
 	public ClientRequestDTO create(ClientRequestDTO clientRequestDTO) {
-		Client client = clientRepository.getReferenceById(clientRequestDTO.getClientId());
+		Client client = clientRepository.getReferenceById(clientRequestDTO.getClient().getId());
 		ProductDetails productDetails = productDetailsRepository
-				.getReferenceById(clientRequestDTO.getProductDetailsId());
+				.getReferenceById(clientRequestDTO.getProductDetails().getId());
 		ClientRequest clientRequest = new ClientRequest();
 		clientRequest.setActionType(clientRequestDTO.getActionType().toString());
 		clientRequest.setClient(client);
