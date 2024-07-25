@@ -3,7 +3,7 @@
 
 :root {
     --main-color: #960707;
-    --blackcolor: #1B1B1B;
+    --backcolor: #1B1B1B;
     --shadow: #dee1e8;
 }
 
@@ -27,14 +27,14 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 600px;
 }
 
 .content {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 25px;
 }
 
 header {
@@ -52,30 +52,8 @@ header {
 
 }
 
-.main-body {
-    border-radius: 10px;
-    width: 80%;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-    padding: 5%;
-    background-image: linear-gradient(to bottom left, #41282c 40%, #960707 100%);
-}
-
-.main-body p {
-    text-align: left;
-    margin-bottom: 10px;
-    color: white;
-}
-
-.main-body img {
-    width: 100%;
-    padding: 10%;
-}
 
 /*------------------------Navigation-Bar--------------------------*/
-#goHome a:hover {
-    transition: none;
-    box-shadow: none;
-}
 
 header .logo {
     display: flex;
@@ -98,12 +76,11 @@ nav a {
     margin-left: 1.5rem;
     color: white;
     font-size: 20px;
-    text-decoration: none;
 }
 
 a {
     box-shadow: inset 0 0 0 0;
-    color: white;
+    color: black;
     padding: 0 .25rem;
     margin: 0 -.25rem;
     text-decoration: none;
@@ -112,7 +89,6 @@ a {
 
 a:hover {
     color: var(--backcolor);
-    text-decoration: none;
     /*box-shadow: inset 300px 0 0 0 #e16477;*/
 }
 
@@ -130,26 +106,151 @@ a:hover {
     width: 100%;
 }
 
-.krediti {
-    text-align: center;
+
+@media (max-width: 811px) {
+    /* html{
+      font-size: 50%;
+    } */
+    #navbar {
+        display: initial;
+    }
+
+    #menu-bars {
+        display: initial;
+    }
+
+    /* .navbar{
+      position: absolute;
+      top: -100%;
+      right: 0;
+      left: 0;
+    } */
+    /* .navbar a{
+      display: block;
+      font-size: 1.5rem;
+      margin: 1rem;
+      padding: 1rem;
+    } */
+    /* .header{
+      padding: 2rem;
+    } */
+    /* .background-text h2{
+      width: 100%;
+      text-align: center;
+    } */
+    nav {
+        position: absolute;
+        top: 100%;
+        background: var(--main-color);
+        width: 100%;
+        left: 0;
+        /* height: 100vh; */
+        clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+
+    }
+
+    nav.active {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+
+    }
+
+    nav a {
+        display: block;
+        background-color: var(--graycolortxt);
+        margin: 1rem;
+        padding: 2rem 2rem;
+        border: 3px solid white;
+        font-size: 1.5rem;
+    }
+
+    .navbar-icons {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+
+    }
+
+    .navbar-icons div {
+        margin: 1rem;
+    }
+
 }
 
-.fa-solid {
-    margin-right: 10px;
-}
 
-.main4 {
+main {
+    margin-top: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 25px;
+    width: 100%;
+    min-height: 500px;
+    margin-bottom: 10%;
 }
 
-.main4 p {
-    margin-left: 3%;
-    margin-right: 3%;
+.info {
+    width: 30%;
+    border: solid 1.5px aqua;
+    border-radius: 1rem;
+    background: none;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white;
+}
+
+.first {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.second {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.third {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.first, .second, .third {
+    padding: 5%
+}
+
+#p-period {
+    margin-left: 16%;
+}
+
+.sum {
+    margin-top: 10%;
+    margin-bottom: 15%;
+}
+
+.installment {
+    margin-top: 10%;
+}
+
+#m-installment {
+    margin-left: 20%;
+
+    font-weight: bold;
+}
+
+#s-sum {
+    margin-left: 20%;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 30px;
 }
 
 .butoniii {
@@ -161,10 +262,13 @@ a:hover {
 }
 
 #calcing {
+    width: max-content;
+    display: flex;
     background: white;
+    justify-content: center;
 }
 
-#calcing:hover {
+#calcing a:hover {
     color: black;
 }
 
@@ -173,7 +277,7 @@ a:hover {
     padding: 10px 20px;
     border-radius: 7px;
     border: 2px solid #960707;
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1px;
@@ -185,6 +289,7 @@ a:hover {
     -moz-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     height: 10%;
+    width: 30%;
 }
 
 .vhod:hover {
@@ -210,7 +315,7 @@ a:hover {
     top: 7%;
     left: 0%;
     opacity: 0;
-    background: #fff;
+    background: #90EE90;
     box-shadow: 0 0 50px 30px #fff;
     -webkit-transform: skewX(-20deg);
     -moz-transform: skewX(-20deg);
@@ -250,95 +355,63 @@ a:hover {
 a {
     text-decoration: none;
     background-image: none;
-    color: white;
 }
 
 
-/* -----------------NavBar------------------- */
+.slidecontainer {
+    width: 80%; /* Width of the outside container */
+    margin-left: 10%;
+    padding-top: 15px;
+    paddign-bottom: 15px;
+}
 
+/* The slider itself */
+.slider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
 
-:root {
-    --main-color: #960707;
-    --blackcolor: #1B1B1B;
-    --shadow: #dee1e8;
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-circle {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: red; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
 }
 
 
-body {
-    flex-direction: column;
-    min-height: 100vh;
-}
+/*---------------Footer--------------*/
 
-header {
-    padding: 2rem 7%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background-image: linear-gradient(130deg, white 22%, var(--main-color) -50%);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    z-index: 1000;
-
-}
-
-
-header .logo {
-    display: flex;
-    align-items: center;
-}
-
-header .logo img {
-    width: 40px;
-}
-
-header .logo h1 {
-    margin-left: 20px;
-    font-family: cursive;
-    color: rgb(20, 18, 18);
-}
-
-nav a {
-    font-size: 1.5rem;
-    padding: 1rem;
-    margin-left: 1.5rem;
-    color: white;
-    font-size: 20px;
-}
-
-a {
-    box-shadow: inset 0 0 0 0;
-    color: black    ;
-    padding: 0 .25rem;
-    margin: 0 -.25rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-}
-
-.menu a {
-    font-size: 25px;
-}
-
-.menu a:hover {
-    color: var(--blackcolor);
-    box-shadow: inset 200px 0 0 0 #e16477;
-}
-
-#navbar {
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    display: none;
-}
-
-
-/* -------------------Footer---------------- */
 .main-footer {
     background: #ececec;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
     padding: 1rem;
-    width: 100%;
+    bottom: 0;
+    position: fixed;
+    z-index: 0;
+
 }
 
 .main-inner-footer {
@@ -361,8 +434,8 @@ a {
 }
 
 .footer-second-part img {
-    width: 2%;
-    margin-left: 50px;
+    width: 15%;
+    margin-left: 40px;
 }
 
 
@@ -457,7 +530,6 @@ a {
         background: var(--main-color);
         width: 100%;
         left: 0;
-        height: auto;
         clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
 
     }
@@ -485,11 +557,6 @@ a {
         margin: 1rem;
     }
 
-    .footer-second-part img {
-        width: 15%;
-        margin-left: 50px;
-    }
-
     .card_title {
         font-size: 2.1rem;
     }
@@ -498,13 +565,87 @@ a {
         font-size: 24px;
     }
 
-    .main4 p {
-        font-size: 20px;
+    .first label {
+        font-size: 18px;
     }
 
+    .second label {
+        font-size: 18px;
+    }
 
-    .krediti {
-        font-size: 30px;
+    .third label {
+        font-size: 18px;
+    }
+
+    .footer-second-part img {
+        width: 15% !important;
+        margin-left: 50px !important;;
+    }
+
+    .info {
+        font-size: 2rem;
     }
 
 }
+
+/* -------------------Footer---------------- */
+.main-footer {
+    background: #ececec;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem;
+    width: 100%;
+
+}
+
+.main-inner-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.logo-text {
+    font-size: 2.5rem;
+}
+
+.footer-second-part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.footer-second-part img {
+    width: 2%;
+    margin-left: 50px;
+}
+
+
+.fa {
+    text-align: center;
+    text-decoration: none;
+    color: rgb(72, 69, 69);
+    margin-right: 25px;
+    font-size: 24px !important;
+
+}
+
+.sources {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sources a {
+    color: rgb(99, 89, 89);
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 32px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.sources a:hover {
+    color: gray;
+}
+
