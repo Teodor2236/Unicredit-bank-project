@@ -8,7 +8,7 @@ body {
 
 .image-login {
     height: 100vh;
-    background-image: url('../image/background.jpg'); 
+    background-image: url('../image/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -21,17 +21,17 @@ body {
 }
 
 .main-part {
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: black; 
+    color: black;
     width: 300px;
     text-align: center;
 }
 
 .main-part .logo {
-    width: 100px; 
+    width: 100px;
     margin-bottom: 15px;
 }
 
@@ -50,13 +50,13 @@ body {
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: 'Nunito', sans-serif; 
+    font-family: 'Nunito', sans-serif;
 }
 
 .form-group label {
     font-size: 20px;
     position: absolute;
-    top: 15px; 
+    top: 15px;
     left: 10px;
     transition: all 0.2s;
     padding: 0 5px;
@@ -74,7 +74,7 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
-    font-family: 'Nunito', sans-serif; 
+    font-family: 'Nunito', sans-serif;
 }
 
 button:hover {
@@ -82,7 +82,8 @@ button:hover {
 }
 
 /* Media Queries for responsiveness */
-@media (max-width: 811px) { /* Tablet and smaller devices */
+@media (max-width: 811px) {
+    /* Tablet and smaller devices */
     .main-part {
         width: 80%;
         padding: 15px;
@@ -97,10 +98,11 @@ button:hover {
         font-size: 14px;
     }
 
-    
+
 }
 
-@media (max-width: 480px) { /* Phones and smaller devices */
+@media (max-width: 480px) {
+    /* Phones and smaller devices */
     .main-part {
         width: 90%;
         padding: 10px;
@@ -120,13 +122,16 @@ button:hover {
         padding: 6px;
         font-size: 12px;
     }
-    .popup{
-    font-size: 0.7rem;
-    padding:0.5rem;
+
+    .popup {
+        font-size: 0.7rem;
+        padding: 0.5rem;
 
     }
 }
-@media (max-height: 380px) { /* Phones and smaller devices */
+
+@media (max-height: 380px) {
+    /* Phones and smaller devices */
     .main-part {
         width: 90%;
         padding: 10px;
@@ -146,18 +151,21 @@ button:hover {
         padding: 6px;
         font-size: 12px;
     }
-    .popup{
-    font-size: 0.7rem;
-    padding:0.5rem;
+
+    .popup {
+        font-size: 0.7rem;
+        padding: 0.5rem;
 
     }
-    .popup button{
-    margin: 0% auto;}
+
+    .popup button {
+        margin: 0% auto;
+    }
 }
 
 .popup input[type=text]:focus {
-       border: 3px solid #555;
-     }
+    border: 3px solid #555;
+}
 
 
 .footer .heart {
@@ -184,7 +192,7 @@ button:hover {
 }
 
 .popup {
-    border-radius:20px;
+    border-radius: 20px;
     display: none;
     position: absolute;
     top: 50%;
@@ -194,51 +202,62 @@ button:hover {
     background: #fff;
     border: 3px solid #ccc;
     z-index: 9999;
-    width:70%;
+    width: 70%;
 }
-.popup input{
-margin:10px;
-border: 1px solid black;
-padding: 10px;
-border-radius: 5px;
-width:80%;
+
+.popup input {
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80%;
 }
-.popup #buttonContainers{
+
+.popup #buttonContainers {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 60%;
     margin-left: 10%;
-    padding:10px
-    }
-.popup button{
-margin: 5% auto;
-border: 2px solid;
-padding: 20px;
-border-radius:30px;
+    padding: 10px
 }
-.popup .puLabel{
-font-size:10px;
-background-color:white;
-}
-.popup h1{
-text-align:center;}
-.popup p{
-text-align:center;
-margin:10px;
-font-size:12px;
-}
-.popup input[type=text]:focus {
-       border: 3px solid #555;
-     }
 
-             #bad-input{
-             border-radius:15px;
-             font-size: 0.7rem;
-             border: 3px solid  white;
-             background-color:red;
-             color:white;
-             padding:5%;
-             margin:3%;
-             }
+.popup button {
+    margin: 5% auto;
+    border: 2px solid;
+    padding: 20px;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+.popup .puLabel {
+    font-size: 14px;
+    background-color: white;
+}
+
+.popup h1 {
+    text-align: center;
+    font-size: 2.3em;
+}
+
+.popup p {
+    text-align: center;
+    margin: 10px;
+    font-size: 16px;
+}
+
+.popup input[type=text]:focus {
+    border: 3px solid #555;
+    font-size: 14px;
+}
+
+#bad-input {
+    border-radius: 15px;
+    font-size: 1rem;
+    border: 3px solid white;
+    background-color: red;
+    color: white;
+    padding: 5%;
+    margin: 3%;
+}
 
