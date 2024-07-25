@@ -135,7 +135,7 @@ a:hover {
 }
 
 .footer-second-part img{
-  width: 2%;
+  width: 40px;
   margin-left: 50px;
 }
 
@@ -225,7 +225,7 @@ html {
 body {
 
     font-family: Nunito, Arial, Helvetica, sans-serif;
-    font-weight: 600;
+
     margin: 0;
     display: grid;
     place-items: center;
@@ -571,7 +571,7 @@ margin-bottom:10%;}
   }
 
   .footer-second-part img{
-      width: 15%;
+      width: 40px;
       margin-left: 50px;
   }
 
