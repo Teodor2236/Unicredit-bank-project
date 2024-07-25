@@ -55,7 +55,7 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
-    background: red;
+    background: #007BFF;
     color: white;
     overflow: hidden;
     box-shadow: 0 0 0 0 transparent;
@@ -64,22 +64,22 @@
     transition: all 0.2s ease-in;
     height: 10%;
     background-image: none;
-    margin-bottom:15px;
+    margin-bottom:10px;
+    margin-top:30px;
+    width: 100%;
   }
   
   .vhod2:hover {
-    background: red;
+    background: #007BFF;
     /* box-shadow: 0 0 30px 5px red; */
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
+    cursor:pointer;
+    background-color: #0056b3;
   }
   
-  .vhod2:hover::before {
-    -webkit-animation: sh02 0.5s 0s linear;
-    -moz-animation: sh02 0.5s 0s linear;
-    animation: sh02 0.5s 0s linear;
-  }
+
   
   .vhod2::before {
     content: '';
