@@ -436,8 +436,8 @@ a {
 }
 
 .footer-second-part img {
-    width: 15%;
-    margin-left: 40px;
+    width: 40px;
+    margin-left: 50px;
 }
 
 
@@ -581,7 +581,7 @@ a {
     }
 
     .footer-second-part img {
-        width: 15% !important;
+        width: 40px;
         margin-left: 50px !important;;
     }
 
