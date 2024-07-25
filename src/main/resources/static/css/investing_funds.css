@@ -42,12 +42,20 @@
     align-items: center;
     margin: 20px auto;
 }
+
 #request-button{
-    background-color: white;
-    border-radius: 7px;
-    border: 2px solid white;
-    color: black;
-    width: max-content;
+        color: #ffffff;
+        padding: 0.8rem;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 4px;
+        font-weight: 400;
+        cursor: pointer;
+        border: 3px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
+        text-align: center;
+        width: max-content !important;
+        margin-left: 5%;
 }
 .butoniii {
     display: flex;
@@ -336,6 +344,8 @@ a:hover {
     margin: 0;
     padding: 1rem;
     width: 100%;
+    margin-top:auto;
+
 }
 
 .main-inner-footer {
@@ -396,8 +406,9 @@ a:hover {
 
 @media (max-width: 811px) {
     header {
-        background-image: linear-gradient(130deg, white 40%, var(--main-color) -50%);
-    }
+    background-image: linear-gradient(130deg, white 67%, var(--main-color) -50%);
+    display: flex;
+    justify-content: space-evenly;    }
 
     .card_text {
         font-size: 18px;
@@ -502,7 +513,8 @@ a:hover {
     padding: 20px;
     border-radius:10px;
     width: 80%;
-    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 2px #960707;
+;
 
 }
 :root {
