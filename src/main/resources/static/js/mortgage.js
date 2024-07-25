@@ -3,8 +3,6 @@ import {get} from "../js/requester.js";
 let menu = document.querySelector("#navbar");
 let nav = document.querySelector(".menu");
 const mortgageContainer = document.getElementById('mortgage-container')
-let confirmationBox = document.getElementById("confirmationBox");
-let closeConfirmation = document.getElementById("closeConfirmation");
 
 menu.onclick = () => {
   menu.classList.toggle("fa-times");

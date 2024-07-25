@@ -4,8 +4,6 @@ let menu = document.querySelector("#navbar");
 let nav = document.querySelector(".menu");
 const imageContainer = document.getElementById('consumer-credit-image');
 const consumerContainer = document.getElementById('consumer-container')
-let confirmationBox = document.getElementById("confirmationBox");
-let closeConfirmation = document.getElementById("closeConfirmation");
 
 menu.onclick = () => {
   menu.classList.toggle("fa-times");
@@ -28,7 +26,6 @@ async function loadConsumerCreditDetails(){
         `
     consumerContainer.innerHTML += consumerHTML;
     imageContainer.innerHTML += titleImageHTML;
-
   }
   catch (e){
     alert(`Error: ${e}`)
