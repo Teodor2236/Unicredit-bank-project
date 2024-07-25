@@ -21,4 +21,7 @@ public class Product {
 
     @Column(name = "image_url")
     private String imageUrl;
+
+    @Column(name = "html_file_name")
+    private String htmlFileName;
 }

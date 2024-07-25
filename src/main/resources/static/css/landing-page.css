@@ -299,7 +299,9 @@ img {
     background-color: rgba(255, 255, 255, 0.12);
 }
 
-
+.card_btn a {
+    color: white;
+}
 .made_by{
     font-weight: 400;
     font-size: 13px;
