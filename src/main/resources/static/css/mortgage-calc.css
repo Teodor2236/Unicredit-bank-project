@@ -27,7 +27,7 @@ html{
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 600px;
 }
 
 .content {
@@ -52,9 +52,7 @@ header{
 
 }
 
-main{
-margin-bottom: 40px;
-}
+
 
 /*------------------------Navigation-Bar--------------------------*/
 
@@ -177,11 +175,13 @@ a:hover {
 
 
 main{
-    margin-top:200px;
+    margin-top:10%;
     display:flex;
     flex-direction:column;
     justify-content:center;
-
+    width:100%;
+    min-height:500px;
+    margin-bottom:10%;
 }
 .info{
     width:30%;
@@ -197,6 +197,7 @@ main{
     display:flex;
     justify-content:space-around;
     align-items:center;
+
 }
 .second{
     display:flex;
@@ -208,15 +209,21 @@ main{
     justify-content:space-around;
     align-items:center;
 }
+.first, .second , .third{
+padding: 5%}
 #p-period{
     margin-left:16%;
 }
 .sum{
-    margin-bottom:5%;
+    margin-bottom:15%;
 }
 .installment{
-    margin-top:5%;
+    margin-top:10%;
 }
+#m-installment{
+    font-weight:bold;
+}
+
 #s-sum{
     margin-left:20%;
 }
@@ -380,10 +387,12 @@ main{
 .main-footer{
   background: #ececec;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  margin-top: 20%;
+
   padding: 1rem;
-  width:91.7%;
-  margin-top:20%;
+  bottom:0;
+  position:fixed;
+  z-index:0;
+
 }
 
 .main-inner-footer{
