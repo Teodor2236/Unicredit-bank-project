@@ -19,86 +19,13 @@
 */
 
 .header{
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        background-image: linear-gradient(130deg, white 28%, #960707 -50%);
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        z-index: 1000;
-        margin-top:-4%;
-
+    display:flex;
+    justify-content:flex-start;
+    width:100%;
+    height:50%;
 }
 
-
-
-header .logo {
-    display: flex;
-    align-items: center;
-}
-
-header .logo img {
-    margin-left: 60%;
-}
-
-header .logo h1 {
-    margin-left: 20px;
-    font-family: cursive;
-    color: rgb(20, 18, 18);
-}
-
-nav a{
-    font-size: 1.5rem;
-    padding: 1rem;
-    margin-left: 1.5rem;
-    color: white;
-    font-size: 20px;
-    text-decoration:none;
-}
-
-a {
-    box-shadow: inset 0 0 0 0;
-    color: #960707;
-    padding: 0 .25rem;
-    margin: 0 -.25rem;text-decoration: none;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-}
-
-a:hover {
-    color: var(--backcolor);
-    box-shadow: inset 300px 0 0 0 #e16477;
-}
-
-#navbar{
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    display: none;
-}
-
-.main-container{
-    flex: 1;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-}
-main{
-
-}
-
-
-.form-select{
-            width:25%;
-            border: solid 1.5px aqua;
-            border-radius: 1rem;
-            background: none;
-            padding: 1rem;
-            font-size: 1rem;
-            transition: border 150ms cubic-bezier(0.4,0,0.2,1);
-            background-color: white;
-
+.header img {
 }
 
 .image-login {
@@ -106,52 +33,34 @@ main{
     justify-content:center;
     flex-direction:column;
     height: 100vh;
-    background-image: url('../image/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
     align-items: center;
-    color: white;
     text-align: center;
 }
 
-body{
-    width:100%;
-    opacity:90%;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    background-image: url(../image/background.jpg);
-     background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-
-}
-.blur{
+.main{
+    width:80%;
+    opacity:90%
 }
 
 .welcome{
     display:flex;
     justify-content:center;
-    color:white;
-    margin-bottom:30px;
-    font-size:48px;
-    align-items:right;
-    margin-left:45%;
-    margin-top:2%;
+    color:black;
+    margin-bottom:75px;
+    font-size:50px;
+    align-items:center;
+    margin-left:23%;
 }
 
 .sectionOne{
     display:flex;
-    justify-content:space-between;
+    justify-content:space-evenly;
     align-items:center;
-    margin-top:9%;
-    width:100%;
+    margin-top:-5%;
 }
 
 body{
@@ -163,7 +72,6 @@ body{
     position: relative;
     background-image: none;
     width:25%;
-    opacity:90%;
    }
 
    .input {
@@ -216,6 +124,7 @@ body{
        -webkit-transition: all 0.2s ease-in;
        -moz-transition: all 0.2s ease-in;
        transition: all 0.2s ease-in;
+       height: 10%;
        background-image: none;
      }
 
@@ -236,11 +145,11 @@ body{
      .vhod2::before {
        content: '';
        display: block;
-       width: 0;
+       width: 0px;
        height: 86%;
        position: absolute;
        top: 7%;
-       left: 0;
+       left: 0%;
        opacity: 0;
        background: #fff;
        box-shadow: 0 0 50px 30px #fff;
@@ -254,7 +163,7 @@ body{
      @keyframes sh02 {
        from {
          opacity: 0;
-         left: 0;
+         left: 0%;
        }
 
        50% {
@@ -278,12 +187,9 @@ body{
 
 table{
     border-collapse: collapse;
-    margin-top:10%;
-    margin-bottom: 30px;
     /*margin-left: 23%;*/
-    width: 160%;
+    width: 100%;
     font-family:Arial, Helvetica, sans-serif;
-    margin-left:-30%;
 }
 
 thead{
@@ -343,4 +249,38 @@ a{
 .select-action-type {
     width: 15%;
     margin-right: 0.5%;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 40px;
+}
+
+header .logo h1 {
+    margin-left: 20px;
+    font-family: cursive;
+    color: rgb(20, 18, 18);
+    font-size: 1.5em;
+}
+
+header{
+    padding: 2rem 7%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-image: linear-gradient(130deg, white 30%, #960707 -50%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 1000;
+}
+
+.welcome-message {
+    color: white;
 }

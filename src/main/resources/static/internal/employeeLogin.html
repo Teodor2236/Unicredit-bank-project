@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход за служители</title>
-    <link rel="stylesheet" href="employeeLogin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
-<body >
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Вход за служители</title>
+        <link rel="stylesheet" href="employeeLogin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body >
 
-    <div class="image-login">
-        <div class="logo2">
-            <img src="../image/logo2.png" alt="" width="150" height="150">
+        <div class="image-login">
+            <div class="logo2">
+                <img src="../image/logo2.png" alt="" width="150" height="150">
+            </div>
+            <div class="admLog">
+                <div>
+                    <img src="../image/Contact.png" alt="" width="150" height="150">
+                </div>
+                <h2>Добре дошли!</h2>
+                <h2>Вход за служители</h2>
+                <div class="input-group">
+                    <input required="" type="text" name="text" class="input" id="employeeNumberInput">
+                    <label class="user-label">Номер на служител</label>
+                </div>
+                <div class="input-group">
+                    <input required="" type="text" name="text" class="input" id="passwordInput">
+                    <label class="user-label">Парола</label>
+                </div>
+                <button class="vhod2" id="loginButton">Вход</button>
+            </div>
         </div>
-<!--        <img src="../image/admin-login-pic.jpg" alt="" width="50%" height="500px">-->
-        
-        <div class="admLog">
-            <div>
-                <img src="../image/Contact.png" alt="" width="150" height="150">
-            </div>
-            <h2>Добре дошли!</h2>
-            <h2>Вход за служители</h2>
-            <div class="input-group">
-                <input required="" type="text" name="text" class="input">
-                <label class="user-label">Номер на служител</label>
-            </div>
-            <div class="input-group">
-                <input required="" type="text" name="text" class="input">
-                <label class="user-label">Парола</label>
-            </div>
-            <button class="vhod2"><a href="../ext/landing-page.html">Вход</a></button>
-        </div>
-    </div>
 
-
-    
-</body>
+        <script type="module" src="../js/employeeLogin.js"></script>
+    </body>
 </html>
