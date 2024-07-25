@@ -37,7 +37,7 @@ async function loadInvestmentFunds() {
                                 <li>&#10003; ${investment.description}</li>    
                             </ul>
                             <div class="d-grid gap-4 col-4 mx-auto">
-                                 <button id="request-button" type="button" class="btn btn-success request-button" data-product-details="${matchingProductDetail}" style="font-size: 15pt;">Проявявам интерес</button>
+                                 <button id="request-button" type="button" class="btn btn-success request-button" data-product-details="${matchingProductDetail.id}" style="font-size: 15pt;">Проявявам интерес</button>
                             </div>
                     </div>
                 </div>
