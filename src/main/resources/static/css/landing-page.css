@@ -483,4 +483,135 @@ body {
     }
 
 
-}
+}.cards {
+     display: flex;
+     flex-wrap: wrap;
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+
+ .cards_item {
+     display: flex;
+     padding: 1rem;
+     flex: 1 1 calc(50% - 2rem); /* Adjust to have 2 cards per row on larger screens */
+     box-sizing: border-box;
+ }
+
+ @media (min-width: 768px) {
+     .cards_item {
+         width: calc(100% - 2rem); /* Ensure two cards per row for iPad Mini */
+     }
+ }
+
+ @media (min-width: 992px) {
+     .cards_item {
+         width: calc(33.3333% - 2rem); /* Adjust to have 3 cards per row on even larger screens */
+     }
+ }
+
+ @media (max-width: 767px) {
+     .cards_item {
+         flex: 1 1 100%; /* Make each card take full width on smaller screens */
+     }
+ }
+
+ @media (max-width: 933px) {
+     header {
+     background-image: linear-gradient(130deg, white 67%, var(--main-color) -50%);
+     display: flex;
+     justify-content: space-evenly;    }
+
+     .card_text {
+         font-size: 18px;
+     }
+
+     html {
+         font-size: 50%;
+     }
+
+     #navbar {
+         display: initial;
+     }
+
+     #menu-bars {
+         display: initial;
+     }
+
+     .navbar {
+         position: absolute;
+         top: -100%;
+         right: 0;
+         left: 0;
+     }
+
+     .navbar a {
+         display: block;
+         font-size: 1.5rem;
+         margin: 1rem;
+         padding: 1rem;
+     }
+
+     .header {
+         padding: 2rem;
+     }
+
+     .background-text h2 {
+         width: 100%;
+         text-align: center;
+     }
+
+     nav {
+         position: absolute;
+         top: 100%;
+         background: var(--main-color);
+         width: 100%;
+         left: 0;
+         clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+
+     }
+
+     nav.active {
+         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+
+     }
+
+     nav a {
+         display: block;
+         margin: 1rem;
+         padding: 2rem 2rem;
+         border: 3px solid white;
+         font-size: 1.5rem;
+     }
+
+     .navbar-icons {
+         display: flex;
+         align-items: center;
+
+     }
+
+     .navbar-icons div {
+         margin: 1rem;
+     }
+
+     .footer-second-part img {
+         width: 15%;
+         margin-left: 50px;
+     }
+
+     .card_title {
+         font-size: 2.1rem;
+     }
+
+     .cards_item {
+         flex: 1 1 100%; /* Make each card take full width on mobile */
+         margin-bottom: 1rem; /* Optional: Add some margin between cards */
+     }
+
+     /* Ensure the cards container does not overflow */
+     .cards {
+         flex-direction: column; /* Stack cards vertically */
+     }
+
+
+ }
